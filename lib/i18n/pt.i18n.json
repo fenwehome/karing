@@ -1,4 +1,4 @@
-{
+﻿{
     "AboutScreen": {
         "installRefer": "Referência de Instalação",
         "installTime": "Hora de Instalação",
@@ -51,9 +51,8 @@
         "clearFileContentTips": "Tem a certeza de que deseja limpar o conteúdo do ficheiro de Perfil? Limpar o ficheiro de Perfil pode causar perda de dados ou funções anormais da aplicação, por favor opere com cautela"
     },
     "HomeScreen": {
-        "toSelectServer": "Por favor Selecione um Servidor",
-        "invalidServer": "é inválido, por favor selecione novamente",
-        "disabledServer": "está desativado, por favor selecione novamente",
+        "invalidServer": "[$p] não é mais válido, selecione novamente um servidor",
+        "disabledServer": "[$p] foi desativado, selecione novamente um servidor",
         "expiredServer": "Nenhum servidor disponível, os perfis podem estar expirados ou desativados",
         "systemProxyTips": "socks:$sp,http(s):$hp",
         "myLinkEmpty": "Por favor configure o [Link de Atalho] antes de o usar",
@@ -105,7 +104,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Copiado para formato CSV",
-        "selectType": "Selecionar Tipo de Desvio"
+        "selectType": "Selecionar Tipo de Desvio",
+        "loopbackWarning": "Pode ter ocorrido um loop de rede. Verifique as configurações do adaptador de rede"
     },
     "PerAppAndroidScreen": {
         "title": "Proxy por Aplicação",
@@ -388,6 +388,7 @@
         "account": "Conta",
         "password": "Palavra-passe",
         "decryptPassword": "Palavra-passe de descriptografia",
+        "overwriteOutboundDns": "DNS: Sobrescrever [@:{SettingsScreen.dnsTypeOutbound}]",
         "required": "Obrigatório",
         "type": "Tipo",
         "path": "Caminho",
@@ -648,6 +649,7 @@
         "no": "Norsk",
         "da": "Dansk",
         "hi": "हिन्दी",
+        "id": "Bahasa Indonesia",
         "ur": "اردو",
         "bn": "বাংলা",
         "el": "Ελληνικά",
@@ -657,3 +659,4 @@
         "pa": "ਪੰਜਾਬੀ"
     }
 }
+

@@ -1,4 +1,4 @@
-{
+﻿{
     "AboutScreen": {
         "installRefer": "Installasjonskilde",
         "installTime": "Installasjonstid",
@@ -51,9 +51,8 @@
         "clearFileContentTips": "Er du sikker på at du vil slette innholdet i profilfilen? Sletting av profilfilen kan føre til tap av data eller unormale appfunksjoner, vær forsiktig"
     },
     "HomeScreen": {
-        "toSelectServer": "Vennligst velg en server",
-        "invalidServer": "er ugyldig, vennligst velg på nytt",
-        "disabledServer": "er deaktivert, vennligst velg på nytt",
+        "invalidServer": "[$p] er ikke lenger gyldig, velg server på nytt",
+        "disabledServer": "[$p] er deaktivert, velg server på nytt",
         "expiredServer": "Ingen servere tilgjengelig, profiler kan ha utløpt eller være deaktivert",
         "systemProxyTips": "socks:$sp,http(s):$hp",
         "myLinkEmpty": "Vennligst sett opp [Snarveiskobling] før du bruker den",
@@ -105,7 +104,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Kopiert til CSV-format",
-        "selectType": "Velg omledningstype"
+        "selectType": "Velg omledningstype",
+        "loopbackWarning": "En nettverksløkke kan ha oppstått. Kontroller innstillingene for nettverksadapteret"
     },
     "PerAppAndroidScreen": {
         "title": "Proxy per app",
@@ -388,6 +388,7 @@
         "account": "Konto",
         "password": "Passord",
         "decryptPassword": "Dekryptering passord",
+        "overwriteOutboundDns": "DNS: Overstyr [@:{SettingsScreen.dnsTypeOutbound}]",
         "required": "Påkrevd",
         "type": "Type",
         "path": "Bane",
@@ -648,6 +649,7 @@
         "no": "Norsk",
         "da": "Dansk",
         "hi": "हिन्दी",
+        "id": "Bahasa Indonesia",
         "ur": "اردو",
         "bn": "বাংলা",
         "el": "Ελληνικά",
@@ -657,3 +659,4 @@
         "pa": "ਪੰਜਾਬੀ"
     }
 }
+

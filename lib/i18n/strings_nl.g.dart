@@ -119,6 +119,7 @@ class TranslationsNl with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$nl implements Translations$HomeScreen$en {
 	final TranslationsNl _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'Selecteer een server';
-	@override String get invalidServer => 'is ongeldig, selecteer opnieuw';
-	@override String get disabledServer => 'is uitgeschakeld, selecteer opnieuw';
+	@override String invalidServer({required Object p}) => '[${p}] is niet meer geldig, selecteer opnieuw een server';
+	@override String disabledServer({required Object p}) => '[${p}] is uitgeschakeld, selecteer opnieuw een server';
 	@override String get expiredServer => 'Geen servers beschikbaar, profielen kunnen verlopen of uitgeschakeld zijn';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'Stel [Snelkoppeling] in voordat u deze gebruikt';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$nl implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'Gekopieerd naar CSV-formaat';
 	@override String get selectType => 'Selecteer omleidingstype';
+	@override String get loopbackWarning => 'Er is mogelijk een netwerklus opgetreden. Controleer de instellingen van je netwerkadapter';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$nl implements Translations$meta$en {
 	@override String get account => 'Account';
 	@override String get password => 'Wachtwoord';
 	@override String get decryptPassword => 'Ontcijferingswachtwoord';
+	@override String get overwriteOutboundDns => 'DNS: Overschrijven [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'Vereist';
 	@override String get type => 'Type';
 	@override String get path => 'Pad';
@@ -989,9 +991,8 @@ extension on TranslationsNl {
 			'FileContentViewerScreen.title' => 'Bestandsinhoud bekijken',
 			'FileContentViewerScreen.clearFileContent' => 'Weet u zeker dat u de inhoud van het bestand wilt wissen?',
 			'FileContentViewerScreen.clearFileContentTips' => 'Weet u zeker dat u de inhoud van het profielbestand wilt wissen? Het wissen van het profielbestand kan leiden tot gegevensverlies of abnormale app-functies, ga voorzichtig te werk',
-			'HomeScreen.toSelectServer' => 'Selecteer een server',
-			'HomeScreen.invalidServer' => 'is ongeldig, selecteer opnieuw',
-			'HomeScreen.disabledServer' => 'is uitgeschakeld, selecteer opnieuw',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] is niet meer geldig, selecteer opnieuw een server',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] is uitgeschakeld, selecteer opnieuw een server',
 			'HomeScreen.expiredServer' => 'Geen servers beschikbaar, profielen kunnen verlopen of uitgeschakeld zijn',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'Stel [Snelkoppeling] in voordat u deze gebruikt',
@@ -1034,6 +1035,7 @@ extension on TranslationsNl {
 			'NetConnectionsFilterScreen.chain' => 'Uitgaand',
 			'NetConnectionsScreen.copyAsCSV' => 'Gekopieerd naar CSV-formaat',
 			'NetConnectionsScreen.selectType' => 'Selecteer omleidingstype',
+			'NetConnectionsScreen.loopbackWarning' => 'Er is mogelijk een netwerklus opgetreden. Controleer de instellingen van je netwerkadapter',
 			'PerAppAndroidScreen.title' => 'Proxy per app',
 			'PerAppAndroidScreen.whiteListMode' => 'Whitelist-modus',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Indien ingeschakeld: alleen de geselecteerde apps gebruiken de proxy; indien niet ingeschakeld: alleen de niet-geselecteerde apps gebruiken de proxy',
@@ -1296,6 +1298,7 @@ extension on TranslationsNl {
 			'meta.account' => 'Account',
 			'meta.password' => 'Wachtwoord',
 			'meta.decryptPassword' => 'Ontcijferingswachtwoord',
+			'meta.overwriteOutboundDns' => 'DNS: Overschrijven [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'Vereist',
 			'meta.type' => 'Type',
 			'meta.path' => 'Pad',
@@ -1463,9 +1466,9 @@ extension on TranslationsNl {
 			'isp.unbind' => ({required Object p}) => 'Ontkoppelen[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'Volgen[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Volgen[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Ongeldig of verlopen',
 			'permission.camera' => 'Camera',
 			'permission.screen' => 'Schermopname',
@@ -1540,6 +1543,7 @@ extension on TranslationsNl {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

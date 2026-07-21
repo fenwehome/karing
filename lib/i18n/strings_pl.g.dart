@@ -119,6 +119,7 @@ class TranslationsPl with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$pl implements Translations$HomeScreen$en {
 	final TranslationsPl _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'Wybierz serwer';
-	@override String get invalidServer => 'jest nieprawidłowy, wybierz ponownie';
-	@override String get disabledServer => 'jest wyłączony, wybierz ponownie';
+	@override String invalidServer({required Object p}) => '[${p}] jest już nieprawidłowy, wybierz ponownie serwer';
+	@override String disabledServer({required Object p}) => '[${p}] został wyłączony, wybierz ponownie serwer';
 	@override String get expiredServer => 'Brak dostępnych serwerów, profile mogą być wygasłe lub wyłączone';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'Skonfiguruj [Skrót] przed użyciem';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$pl implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'Skopiowano do formatu CSV';
 	@override String get selectType => 'Wybierz typ przekierowania';
+	@override String get loopbackWarning => 'Mogło wystąpić zapętlenie sieci. Sprawdź ustawienia karty sieciowej';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$pl implements Translations$meta$en {
 	@override String get account => 'Konto';
 	@override String get password => 'Hasło';
 	@override String get decryptPassword => 'Hasło deszyfrujące';
+	@override String get overwriteOutboundDns => 'DNS: Nadpisz [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'Wymagane';
 	@override String get type => 'Typ';
 	@override String get path => 'Ścieżka';
@@ -989,9 +991,8 @@ extension on TranslationsPl {
 			'FileContentViewerScreen.title' => 'Przeglądarka zawartości plików',
 			'FileContentViewerScreen.clearFileContent' => 'Czy na pewno chcesz wyczyścić zawartość pliku?',
 			'FileContentViewerScreen.clearFileContentTips' => 'Czy na pewno chcesz wyczyścić zawartość pliku profilu? Wyczyszczenie pliku profilu może spowodować utratę danych lub nieprawidłowe działanie aplikacji, prosimy o ostrożność',
-			'HomeScreen.toSelectServer' => 'Wybierz serwer',
-			'HomeScreen.invalidServer' => 'jest nieprawidłowy, wybierz ponownie',
-			'HomeScreen.disabledServer' => 'jest wyłączony, wybierz ponownie',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] jest już nieprawidłowy, wybierz ponownie serwer',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] został wyłączony, wybierz ponownie serwer',
 			'HomeScreen.expiredServer' => 'Brak dostępnych serwerów, profile mogą być wygasłe lub wyłączone',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'Skonfiguruj [Skrót] przed użyciem',
@@ -1034,6 +1035,7 @@ extension on TranslationsPl {
 			'NetConnectionsFilterScreen.chain' => 'Wychodzące',
 			'NetConnectionsScreen.copyAsCSV' => 'Skopiowano do formatu CSV',
 			'NetConnectionsScreen.selectType' => 'Wybierz typ przekierowania',
+			'NetConnectionsScreen.loopbackWarning' => 'Mogło wystąpić zapętlenie sieci. Sprawdź ustawienia karty sieciowej',
 			'PerAppAndroidScreen.title' => 'Proxy dla poszczególnych aplikacji',
 			'PerAppAndroidScreen.whiteListMode' => 'Tryb białej listy',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Gdy włączone: tylko zaznaczone aplikacje używają proxy; gdy wyłączone: tylko niezaznaczone aplikacje używają proxy',
@@ -1296,6 +1298,7 @@ extension on TranslationsPl {
 			'meta.account' => 'Konto',
 			'meta.password' => 'Hasło',
 			'meta.decryptPassword' => 'Hasło deszyfrujące',
+			'meta.overwriteOutboundDns' => 'DNS: Nadpisz [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'Wymagane',
 			'meta.type' => 'Typ',
 			'meta.path' => 'Ścieżka',
@@ -1463,9 +1466,9 @@ extension on TranslationsPl {
 			'isp.unbind' => ({required Object p}) => 'Odwiąż[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'Śledź[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Śledź[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Nieprawidłowy lub wygasły',
 			'permission.camera' => 'Aparat',
 			'permission.screen' => 'Nagrywanie ekranu',
@@ -1540,6 +1543,7 @@ extension on TranslationsPl {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

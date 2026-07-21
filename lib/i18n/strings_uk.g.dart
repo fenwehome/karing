@@ -119,6 +119,7 @@ class TranslationsUk with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$uk implements Translations$HomeScreen$en {
 	final TranslationsUk _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'Будь ласка, виберіть сервер';
-	@override String get invalidServer => 'некоректний, будь ласка, виберіть знову';
-	@override String get disabledServer => 'вимкнено, будь ласка, виберіть знову';
+	@override String invalidServer({required Object p}) => '[${p}] більше не дійсний, будь ласка, виберіть сервер знову';
+	@override String disabledServer({required Object p}) => '[${p}] вимкнено, будь ласка, виберіть сервер знову';
 	@override String get expiredServer => 'Немає доступних серверів, термін дії профілів може закінчитися або вони вимкнені';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'Будь ласка, налаштуйте [Посилання швидкого доступу] перед використанням';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$uk implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'Скопійовано у формат CSV';
 	@override String get selectType => 'Виберіть тип відхилення';
+	@override String get loopbackWarning => 'Можливо, виникло мережеве зациклення. Перевірте налаштування мережевого адаптера';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$uk implements Translations$meta$en {
 	@override String get account => 'Обліковий запис';
 	@override String get password => 'Пароль';
 	@override String get decryptPassword => 'Пароль розшифровки';
+	@override String get overwriteOutboundDns => 'DNS: Перезаписати [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'Обов\'язково';
 	@override String get type => 'Тип';
 	@override String get path => 'Шлях';
@@ -989,9 +991,8 @@ extension on TranslationsUk {
 			'FileContentViewerScreen.title' => 'Переглядач вмісту файлів',
 			'FileContentViewerScreen.clearFileContent' => 'Ви впевнені, що хочете очистити вміст файлу?',
 			'FileContentViewerScreen.clearFileContentTips' => 'Ви впевнені, що хочете очистити вміст файлу профілю? Очищення файлу профілю може призвести до втрати даних або порушення функцій програми, будь ласка, дійте обережно',
-			'HomeScreen.toSelectServer' => 'Будь ласка, виберіть сервер',
-			'HomeScreen.invalidServer' => 'некоректний, будь ласка, виберіть знову',
-			'HomeScreen.disabledServer' => 'вимкнено, будь ласка, виберіть знову',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] більше не дійсний, будь ласка, виберіть сервер знову',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] вимкнено, будь ласка, виберіть сервер знову',
 			'HomeScreen.expiredServer' => 'Немає доступних серверів, термін дії профілів може закінчитися або вони вимкнені',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'Будь ласка, налаштуйте [Посилання швидкого доступу] перед використанням',
@@ -1034,6 +1035,7 @@ extension on TranslationsUk {
 			'NetConnectionsFilterScreen.chain' => 'Вихідний',
 			'NetConnectionsScreen.copyAsCSV' => 'Скопійовано у формат CSV',
 			'NetConnectionsScreen.selectType' => 'Виберіть тип відхилення',
+			'NetConnectionsScreen.loopbackWarning' => 'Можливо, виникло мережеве зациклення. Перевірте налаштування мережевого адаптера',
 			'PerAppAndroidScreen.title' => 'Проксі для окремих програм',
 			'PerAppAndroidScreen.whiteListMode' => 'Режим білого списку',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Коли увімкнено: проксі-серверами є лише позначені програми; коли вимкнено: проксі-серверами є лише непозначені програми',
@@ -1296,6 +1298,7 @@ extension on TranslationsUk {
 			'meta.account' => 'Обліковий запис',
 			'meta.password' => 'Пароль',
 			'meta.decryptPassword' => 'Пароль розшифровки',
+			'meta.overwriteOutboundDns' => 'DNS: Перезаписати [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'Обов\'язково',
 			'meta.type' => 'Тип',
 			'meta.path' => 'Шлях',
@@ -1463,9 +1466,9 @@ extension on TranslationsUk {
 			'isp.unbind' => ({required Object p}) => 'Відв\'язати[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'Слідкувати[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Слідкувати[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Некоректний або термін дії закінчився',
 			'permission.camera' => 'Камера',
 			'permission.screen' => 'Запис екрана',
@@ -1540,6 +1543,7 @@ extension on TranslationsUk {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

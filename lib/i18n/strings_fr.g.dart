@@ -119,6 +119,7 @@ class TranslationsFr with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$fr implements Translations$HomeScreen$en {
 	final TranslationsFr _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'Veuillez sélectionner un serveur';
-	@override String get invalidServer => 'est invalide, veuillez sélectionner à nouveau';
-	@override String get disabledServer => 'est désactivé, veuillez sélectionner à nouveau';
+	@override String invalidServer({required Object p}) => '[${p}] n\'est plus valide, veuillez sélectionner à nouveau un serveur';
+	@override String disabledServer({required Object p}) => '[${p}] a été désactivé, veuillez sélectionner à nouveau un serveur';
 	@override String get expiredServer => 'Aucun serveur disponible, les profils peuvent être expirés ou désactivés';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks : ${sp}, http(s) : ${hp}';
 	@override String get myLinkEmpty => 'Veuillez configurer un [Lien raccourci] avant de l\'utiliser';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$fr implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'Copié au format CSV';
 	@override String get selectType => 'Sélectionner le type de diversion';
+	@override String get loopbackWarning => 'Une boucle réseau a peut-être été détectée. Veuillez vérifier les paramètres de votre carte réseau';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$fr implements Translations$meta$en {
 	@override String get account => 'Compte';
 	@override String get password => 'Mot de passe';
 	@override String get decryptPassword => 'Mot de passe de déchiffrement';
+	@override String get overwriteOutboundDns => 'DNS : Remplacer [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'Requis';
 	@override String get type => 'Type';
 	@override String get path => 'Chemin';
@@ -989,9 +991,8 @@ extension on TranslationsFr {
 			'FileContentViewerScreen.title' => 'Visionneuse de contenu de fichier',
 			'FileContentViewerScreen.clearFileContent' => 'Êtes-vous sûr de vouloir effacer le contenu du fichier ?',
 			'FileContentViewerScreen.clearFileContentTips' => 'Êtes-vous sûr de vouloir effacer le contenu du fichier de profil ? L\'effacement du fichier de profil peut entraîner une perte de données ou des dysfonctionnements de l\'application, veuillez agir avec prudence',
-			'HomeScreen.toSelectServer' => 'Veuillez sélectionner un serveur',
-			'HomeScreen.invalidServer' => 'est invalide, veuillez sélectionner à nouveau',
-			'HomeScreen.disabledServer' => 'est désactivé, veuillez sélectionner à nouveau',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] n\'est plus valide, veuillez sélectionner à nouveau un serveur',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] a été désactivé, veuillez sélectionner à nouveau un serveur',
 			'HomeScreen.expiredServer' => 'Aucun serveur disponible, les profils peuvent être expirés ou désactivés',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks : ${sp}, http(s) : ${hp}',
 			'HomeScreen.myLinkEmpty' => 'Veuillez configurer un [Lien raccourci] avant de l\'utiliser',
@@ -1034,6 +1035,7 @@ extension on TranslationsFr {
 			'NetConnectionsFilterScreen.chain' => 'Sortant',
 			'NetConnectionsScreen.copyAsCSV' => 'Copié au format CSV',
 			'NetConnectionsScreen.selectType' => 'Sélectionner le type de diversion',
+			'NetConnectionsScreen.loopbackWarning' => 'Une boucle réseau a peut-être été détectée. Veuillez vérifier les paramètres de votre carte réseau',
 			'PerAppAndroidScreen.title' => 'Proxy par application',
 			'PerAppAndroidScreen.whiteListMode' => 'Mode liste blanche',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Si activé : seules les applications cochées passent par le proxy ; si désactivé : seules les applications non cochées passent par le proxy',
@@ -1296,6 +1298,7 @@ extension on TranslationsFr {
 			'meta.account' => 'Compte',
 			'meta.password' => 'Mot de passe',
 			'meta.decryptPassword' => 'Mot de passe de déchiffrement',
+			'meta.overwriteOutboundDns' => 'DNS : Remplacer [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'Requis',
 			'meta.type' => 'Type',
 			'meta.path' => 'Chemin',
@@ -1463,9 +1466,9 @@ extension on TranslationsFr {
 			'isp.unbind' => ({required Object p}) => 'Délier [${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ [${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram [${p}]',
-			'isp.follow' => ({required Object p}) => 'Suivre [${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Suivre [${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Invalide ou expiré',
 			'permission.camera' => 'Appareil photo',
 			'permission.screen' => 'Enregistrement d\'écran',
@@ -1540,6 +1543,7 @@ extension on TranslationsFr {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

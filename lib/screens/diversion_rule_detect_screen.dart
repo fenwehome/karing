@@ -201,7 +201,7 @@ class _DiversionRuleDetectScreenState
                           ),
                           ValueListenableBuilder<String>(
                             builder: _encoded.value != _domain
-                                ? _buildWithValueYellow
+                                ? _buildWithValueBlue
                                 : _buildWithValue,
                             valueListenable: _encoded,
                           ),
@@ -370,7 +370,7 @@ class _DiversionRuleDetectScreenState
     if (!setting.novice && setting.dns.enableInboundDomainResolve) {
       ReturnResult<String> resultDns = await ClashApi.dnsQueryWithDefaultRouter(
         SettingManager.getConfig().proxy.controlPort,
-        _domain,
+        _encoded.value,
         setting.ipStrategy.name,
       );
       if (resultDns.error == null) {
@@ -387,7 +387,7 @@ class _DiversionRuleDetectScreenState
 
     ReturnResult<String> outboundResult = await ClashApi.outboundQuery(
       setting.proxy.controlPort,
-      _domain,
+      _encoded.value,
       ip,
     );
 
@@ -459,7 +459,7 @@ class _DiversionRuleDetectScreenState
     );
   }
 
-  Widget _buildWithValueYellow(
+  Widget _buildWithValueBlue(
     BuildContext context,
     String value,
     Widget? child,
@@ -470,7 +470,7 @@ class _DiversionRuleDetectScreenState
         value,
         style: TextStyle(
           fontSize: ThemeConfig.kFontSizeListSubItem,
-          color: Colors.yellow,
+          color: Colors.blue,
         ),
       ),
     );

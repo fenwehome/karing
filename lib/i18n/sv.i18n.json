@@ -1,4 +1,4 @@
-{
+﻿{
     "AboutScreen": {
         "installRefer": "Installationskälla",
         "installTime": "Installationstid",
@@ -51,9 +51,8 @@
         "clearFileContentTips": "Är du säker på att du vill rensa innehållet i profilfilen? Om du rensar profilfilen kan det leda till dataförlust eller onormala appfunktioner, var försiktig"
     },
     "HomeScreen": {
-        "toSelectServer": "Välj en server",
-        "invalidServer": "är ogiltig, välj igen",
-        "disabledServer": "är inaktiverad, välj igen",
+        "invalidServer": "[$p] är inte längre giltig, välj server igen",
+        "disabledServer": "[$p] är inaktiverad, välj server igen",
         "expiredServer": "Inga servrar tillgängliga, profiler kan ha gått ut eller vara inaktiverade",
         "systemProxyTips": "socks:$sp,http(s):$hp",
         "myLinkEmpty": "Ställ in [Genvägslänk] innan du använder den",
@@ -105,7 +104,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Kopierat till CSV-format",
-        "selectType": "Välj omledningstyp"
+        "selectType": "Välj omledningstyp",
+        "loopbackWarning": "Ett nätverksloop kan ha uppstått. Kontrollera inställningarna för nätverksadaptern"
     },
     "PerAppAndroidScreen": {
         "title": "Proxy per app",
@@ -388,6 +388,7 @@
         "account": "Konto",
         "password": "Lösenord",
         "decryptPassword": "Dekrypterringslösenord",
+        "overwriteOutboundDns": "DNS: Åsidosätt [@:{SettingsScreen.dnsTypeOutbound}]",
         "required": "Krävs",
         "type": "Typ",
         "path": "Sökväg",
@@ -648,6 +649,7 @@
         "no": "Norsk",
         "da": "Dansk",
         "hi": "हिन्दी",
+        "id": "Bahasa Indonesia",
         "ur": "اردو",
         "bn": "বাংলা",
         "el": "Ελληνικά",
@@ -657,3 +659,4 @@
         "pa": "ਪੰਜਾਬੀ"
     }
 }
+

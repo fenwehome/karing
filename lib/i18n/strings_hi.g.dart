@@ -119,6 +119,7 @@ class TranslationsHi with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$hi implements Translations$HomeScreen$en {
 	final TranslationsHi _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'कृपया एक सर्वर चुनें';
-	@override String get invalidServer => 'अमान्य है, कृपया पुनः चुनें';
-	@override String get disabledServer => 'अक्षम है, कृपया पुनः चुनें';
+	@override String invalidServer({required Object p}) => '[${p}] अब मान्य नहीं है, कृपया सर्वर फिर से चुनें';
+	@override String disabledServer({required Object p}) => '[${p}] निष्क्रिय कर दिया गया है, कृपया सर्वर फिर से चुनें';
 	@override String get expiredServer => 'कोई सर्वर उपलब्ध नहीं है, प्रोफ़ाइल समाप्त या अक्षम हो सकती हैं';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'कृपया उपयोग करने से पहले [शॉर्टकट लिंक] सेट करें';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$hi implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'CSV प्रारूप में कॉपी किया गया';
 	@override String get selectType => 'विचलन प्रकार चुनें';
+	@override String get loopbackWarning => 'नेटवर्क में लूपबैक हो सकता है, कृपया नेटवर्क एडेप्टर सेटिंग्स जांचें';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$hi implements Translations$meta$en {
 	@override String get account => 'खाता';
 	@override String get password => 'पासवर्ड';
 	@override String get decryptPassword => 'डिक्रोरप्ट पासवर्ड';
+	@override String get overwriteOutboundDns => 'DNS: ओवरराइड करें [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'आवश्यक';
 	@override String get type => 'प्रकार';
 	@override String get path => 'पथ';
@@ -989,9 +991,8 @@ extension on TranslationsHi {
 			'FileContentViewerScreen.title' => 'फ़ाइल सामग्री दर्शक',
 			'FileContentViewerScreen.clearFileContent' => 'क्या आप वाकई फ़ाइल की सामग्री साफ़ करना चाहते हैं?',
 			'FileContentViewerScreen.clearFileContentTips' => 'क्या आप वाकई प्रोफ़ाइल फ़ाइल की सामग्री साफ़ करना चाहते हैं? प्रोफ़ाइल फ़ाइल को साफ़ करने से डेटा हानि या असामान्य ऐप कार्य हो सकते हैं, कृपया सावधानी से काम करें',
-			'HomeScreen.toSelectServer' => 'कृपया एक सर्वर चुनें',
-			'HomeScreen.invalidServer' => 'अमान्य है, कृपया पुनः चुनें',
-			'HomeScreen.disabledServer' => 'अक्षम है, कृपया पुनः चुनें',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] अब मान्य नहीं है, कृपया सर्वर फिर से चुनें',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] निष्क्रिय कर दिया गया है, कृपया सर्वर फिर से चुनें',
 			'HomeScreen.expiredServer' => 'कोई सर्वर उपलब्ध नहीं है, प्रोफ़ाइल समाप्त या अक्षम हो सकती हैं',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'कृपया उपयोग करने से पहले [शॉर्टकट लिंक] सेट करें',
@@ -1034,6 +1035,7 @@ extension on TranslationsHi {
 			'NetConnectionsFilterScreen.chain' => 'आउटबाउंड',
 			'NetConnectionsScreen.copyAsCSV' => 'CSV प्रारूप में कॉपी किया गया',
 			'NetConnectionsScreen.selectType' => 'विचलन प्रकार चुनें',
+			'NetConnectionsScreen.loopbackWarning' => 'नेटवर्क में लूपबैक हो सकता है, कृपया नेटवर्क एडेप्टर सेटिंग्स जांचें',
 			'PerAppAndroidScreen.title' => 'प्रति-ऐप प्रॉक्सी',
 			'PerAppAndroidScreen.whiteListMode' => 'श्वेतसूची मोड',
 			'PerAppAndroidScreen.whiteListModeTip' => 'जब सक्षम किया जाता है: केवल चिह्नित ऐप ही प्रॉक्सी होते हैं; जब सक्षम नहीं किया जाता है: केवल अचिह्नित ऐप ही प्रॉक्सी होते हैं',
@@ -1296,6 +1298,7 @@ extension on TranslationsHi {
 			'meta.account' => 'खाता',
 			'meta.password' => 'पासवर्ड',
 			'meta.decryptPassword' => 'डिक्रोरप्ट पासवर्ड',
+			'meta.overwriteOutboundDns' => 'DNS: ओवरराइड करें [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'आवश्यक',
 			'meta.type' => 'प्रकार',
 			'meta.path' => 'पथ',
@@ -1463,9 +1466,9 @@ extension on TranslationsHi {
 			'isp.unbind' => ({required Object p}) => 'अनबाइंड करें[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'फॉलो करें[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'फॉलो करें[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] अमान्य या समाप्त हो गया',
 			'permission.camera' => 'कैमरा',
 			'permission.screen' => 'स्क्रीन रिकॉर्डिंग',
@@ -1540,6 +1543,7 @@ extension on TranslationsHi {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

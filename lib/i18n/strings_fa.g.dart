@@ -119,6 +119,7 @@ class TranslationsFa with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$fa implements Translations$HomeScreen$en {
 	final TranslationsFa _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'لطفا یک سرور انتخاب کنید';
-	@override String get invalidServer => 'نامعتبر است، لطفا مجدد انتخاب کنید';
-	@override String get disabledServer => 'غیرفعال است، لطفا مجدد انتخاب کنید';
+	@override String invalidServer({required Object p}) => '[${p}] دیگر معتبر نیست، لطفا دوباره یک سرور انتخاب کنید';
+	@override String disabledServer({required Object p}) => '[${p}] غیرفعال شده است، لطفا دوباره یک سرور انتخاب کنید';
 	@override String get expiredServer => 'هیچ سروری در دسترس نیست: ممکن است پیکربندی قدیمی یا غیرفعال باشد';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'لطفا قبل‌از استفاده [لینک میان‌بر] را راه‌اندازی کنید';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$fa implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'در فرمت CAV کپی شد';
 	@override String get selectType => 'انتخاب نوع انحراف';
+	@override String get loopbackWarning => 'ممکن است حلقه شبکه رخ داده باشد. لطفاً تنظیمات آداپتور شبکه را بررسی کنید';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$fa implements Translations$meta$en {
 	@override String get account => 'نام‌کاربری';
 	@override String get password => 'رمز‌عبور';
 	@override String get decryptPassword => 'دکريپت رمز‌عبور';
+	@override String get overwriteOutboundDns => 'DNS: بازنویسی [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'الزامی';
 	@override String get type => 'نوع';
 	@override String get path => 'مسیر';
@@ -989,9 +991,8 @@ extension on TranslationsFa {
 			'FileContentViewerScreen.title' => 'نمایش دهنده محتوای فایل',
 			'FileContentViewerScreen.clearFileContent' => 'آیا از پاکسازی محتوای فایل اطمینان دارید؟',
 			'FileContentViewerScreen.clearFileContentTips' => 'آیا از پاکسازی محتوای فایل پروفایل اطمینان دارید؟ پاکسازی محتوای فایل پروفایل ممکن است باعث از دست رفتن داده یا عملیات غیرعادی نرم‌افزار شود؛ لطفا با احتیاط عمل کنید.',
-			'HomeScreen.toSelectServer' => 'لطفا یک سرور انتخاب کنید',
-			'HomeScreen.invalidServer' => 'نامعتبر است، لطفا مجدد انتخاب کنید',
-			'HomeScreen.disabledServer' => 'غیرفعال است، لطفا مجدد انتخاب کنید',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] دیگر معتبر نیست، لطفا دوباره یک سرور انتخاب کنید',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] غیرفعال شده است، لطفا دوباره یک سرور انتخاب کنید',
 			'HomeScreen.expiredServer' => 'هیچ سروری در دسترس نیست: ممکن است پیکربندی قدیمی یا غیرفعال باشد',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'لطفا قبل‌از استفاده [لینک میان‌بر] را راه‌اندازی کنید',
@@ -1034,6 +1035,7 @@ extension on TranslationsFa {
 			'NetConnectionsFilterScreen.chain' => 'Outbound',
 			'NetConnectionsScreen.copyAsCSV' => 'در فرمت CAV کپی شد',
 			'NetConnectionsScreen.selectType' => 'انتخاب نوع انحراف',
+			'NetConnectionsScreen.loopbackWarning' => 'ممکن است حلقه شبکه رخ داده باشد. لطفاً تنظیمات آداپتور شبکه را بررسی کنید',
 			'PerAppAndroidScreen.title' => 'پروکسی به‌تفکیک برنامه',
 			'PerAppAndroidScreen.whiteListMode' => 'حالت لیست سفید',
 			'PerAppAndroidScreen.whiteListModeTip' => 'وقتی فعال باشد: فقط برنامه‌هایی که انتخاب شده‌اند پروکسی می‌شوند؛ وقتی فعال نباشد: فقط برنامه‌هایی که انتخاب نشده‌اند پروکسی می‌شوند',
@@ -1296,6 +1298,7 @@ extension on TranslationsFa {
 			'meta.account' => 'نام‌کاربری',
 			'meta.password' => 'رمز‌عبور',
 			'meta.decryptPassword' => 'دکريپت رمز‌عبور',
+			'meta.overwriteOutboundDns' => 'DNS: بازنویسی [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'الزامی',
 			'meta.type' => 'نوع',
 			'meta.path' => 'مسیر',
@@ -1463,9 +1466,9 @@ extension on TranslationsFa {
 			'isp.unbind' => ({required Object p}) => 'لغو پیوند[${p}]',
 			'isp.faq' => ({required Object p}) => 'سوالات متداول[${p}]',
 			'isp.customerService' => ({required Object p}) => 'خدمات مشتری[${p}]',
-			'isp.follow' => ({required Object p}) => 'دنبال کردن[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'دنبال کردن[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}]نامعتبر یا منقضی شده است',
 			'permission.camera' => 'دوربین',
 			'permission.screen' => 'ضبط صفحه',
@@ -1540,6 +1543,7 @@ extension on TranslationsFa {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

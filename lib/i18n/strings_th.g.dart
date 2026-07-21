@@ -119,6 +119,7 @@ class TranslationsTh with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$th implements Translations$HomeScreen$en {
 	final TranslationsTh _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'โปรดเลือกเซิร์ฟเวอร์';
-	@override String get invalidServer => 'ไม่ถูกต้อง โปรดเลือกอีกครั้ง';
-	@override String get disabledServer => 'ถูกปิดใช้งาน โปรดเลือกอีกครั้ง';
+	@override String invalidServer({required Object p}) => '[${p}] ไม่ถูกต้องแล้ว โปรดเลือกเซิร์ฟเวอร์อีกครั้ง';
+	@override String disabledServer({required Object p}) => '[${p}] ถูกปิดใช้งานแล้ว โปรดเลือกเซิร์ฟเวอร์อีกครั้ง';
 	@override String get expiredServer => 'ไม่มีเซิร์ฟเวอร์ที่พร้อมใช้งาน โปรไฟล์อาจหมดอายุหรือถูกปิดใช้งาน';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'โปรดตั้งค่า [ลิงก์ลัด] ก่อนใช้งาน';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$th implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'คัดลอกไปยังรูปแบบ CSV';
 	@override String get selectType => 'เลือกประเภทการเปลี่ยนเส้นทาง';
+	@override String get loopbackWarning => 'อาจเกิดลูปเครือข่าย โปรดตรวจสอบการตั้งค่าอะแดปเตอร์เครือข่าย';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$th implements Translations$meta$en {
 	@override String get account => 'บัญชี';
 	@override String get password => 'รหัสผ่าน';
 	@override String get decryptPassword => 'รหัสผ่านถอดรหัส';
+	@override String get overwriteOutboundDns => 'DNS: เขียนทับ [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'จำเป็น';
 	@override String get type => 'ประเภท';
 	@override String get path => 'เส้นทาง';
@@ -989,9 +991,8 @@ extension on TranslationsTh {
 			'FileContentViewerScreen.title' => 'โปรแกรมดูเนื้อหาไฟล์',
 			'FileContentViewerScreen.clearFileContent' => 'คุณแน่ใจไหมว่าต้องการล้างเนื้อหาของไฟล์?',
 			'FileContentViewerScreen.clearFileContentTips' => 'คุณแน่ใจไหมว่าต้องการล้างเนื้อหาของไฟล์โปรไฟล์? การล้างไฟล์โปรไฟล์อาจทำให้เสียข้อมูลหรือฟังก์ชันแอปพลิเคชันผิดปกติ โปรดดำเนินการด้วยความระมัดระวัง',
-			'HomeScreen.toSelectServer' => 'โปรดเลือกเซิร์ฟเวอร์',
-			'HomeScreen.invalidServer' => 'ไม่ถูกต้อง โปรดเลือกอีกครั้ง',
-			'HomeScreen.disabledServer' => 'ถูกปิดใช้งาน โปรดเลือกอีกครั้ง',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] ไม่ถูกต้องแล้ว โปรดเลือกเซิร์ฟเวอร์อีกครั้ง',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] ถูกปิดใช้งานแล้ว โปรดเลือกเซิร์ฟเวอร์อีกครั้ง',
 			'HomeScreen.expiredServer' => 'ไม่มีเซิร์ฟเวอร์ที่พร้อมใช้งาน โปรไฟล์อาจหมดอายุหรือถูกปิดใช้งาน',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'โปรดตั้งค่า [ลิงก์ลัด] ก่อนใช้งาน',
@@ -1034,6 +1035,7 @@ extension on TranslationsTh {
 			'NetConnectionsFilterScreen.chain' => 'Outbound',
 			'NetConnectionsScreen.copyAsCSV' => 'คัดลอกไปยังรูปแบบ CSV',
 			'NetConnectionsScreen.selectType' => 'เลือกประเภทการเปลี่ยนเส้นทาง',
+			'NetConnectionsScreen.loopbackWarning' => 'อาจเกิดลูปเครือข่าย โปรดตรวจสอบการตั้งค่าอะแดปเตอร์เครือข่าย',
 			'PerAppAndroidScreen.title' => 'พร็อกซีต่อแอป',
 			'PerAppAndroidScreen.whiteListMode' => 'โหมดรายการอนุญาต',
 			'PerAppAndroidScreen.whiteListModeTip' => 'เมื่อเปิดใช้งาน: เฉพาะแอปที่ได้ตรวจสอบเท่านั้นจะใช้พร็อกซี เมื่อไม่เปิดใช้งาน: เฉพาะแอปที่ไม่ได้ตรวจสอบเท่านั้นจะใช้พร็อกซี',
@@ -1296,6 +1298,7 @@ extension on TranslationsTh {
 			'meta.account' => 'บัญชี',
 			'meta.password' => 'รหัสผ่าน',
 			'meta.decryptPassword' => 'รหัสผ่านถอดรหัส',
+			'meta.overwriteOutboundDns' => 'DNS: เขียนทับ [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'จำเป็น',
 			'meta.type' => 'ประเภท',
 			'meta.path' => 'เส้นทาง',
@@ -1463,9 +1466,9 @@ extension on TranslationsTh {
 			'isp.unbind' => ({required Object p}) => 'ยกเลิกการผูก[${p}]',
 			'isp.faq' => ({required Object p}) => 'คำถามที่พบบ่อย[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'ติดตาม[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'ติดตาม[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] ไม่ถูกต้องหรือหมดอายุ',
 			'permission.camera' => 'กล้อง',
 			'permission.screen' => 'การบันทึกหน้าจอ',
@@ -1540,6 +1543,7 @@ extension on TranslationsTh {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

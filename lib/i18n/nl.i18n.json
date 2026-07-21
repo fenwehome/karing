@@ -1,4 +1,4 @@
-{
+﻿{
     "AboutScreen": {
         "installRefer": "Installatiebron",
         "installTime": "Installatietijd",
@@ -51,9 +51,8 @@
         "clearFileContentTips": "Weet u zeker dat u de inhoud van het profielbestand wilt wissen? Het wissen van het profielbestand kan leiden tot gegevensverlies of abnormale app-functies, ga voorzichtig te werk"
     },
     "HomeScreen": {
-        "toSelectServer": "Selecteer een server",
-        "invalidServer": "is ongeldig, selecteer opnieuw",
-        "disabledServer": "is uitgeschakeld, selecteer opnieuw",
+        "invalidServer": "[$p] is niet meer geldig, selecteer opnieuw een server",
+        "disabledServer": "[$p] is uitgeschakeld, selecteer opnieuw een server",
         "expiredServer": "Geen servers beschikbaar, profielen kunnen verlopen of uitgeschakeld zijn",
         "systemProxyTips": "socks:$sp,http(s):$hp",
         "myLinkEmpty": "Stel [Snelkoppeling] in voordat u deze gebruikt",
@@ -105,7 +104,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Gekopieerd naar CSV-formaat",
-        "selectType": "Selecteer omleidingstype"
+        "selectType": "Selecteer omleidingstype",
+        "loopbackWarning": "Er is mogelijk een netwerklus opgetreden. Controleer de instellingen van je netwerkadapter"
     },
     "PerAppAndroidScreen": {
         "title": "Proxy per app",
@@ -388,6 +388,7 @@
         "account": "Account",
         "password": "Wachtwoord",
         "decryptPassword": "Ontcijferingswachtwoord",
+        "overwriteOutboundDns": "DNS: Overschrijven [@:{SettingsScreen.dnsTypeOutbound}]",
         "required": "Vereist",
         "type": "Type",
         "path": "Pad",
@@ -648,6 +649,7 @@
         "no": "Norsk",
         "da": "Dansk",
         "hi": "हिन्दी",
+        "id": "Bahasa Indonesia",
         "ur": "اردو",
         "bn": "বাংলা",
         "el": "Ελληνικά",
@@ -657,3 +659,4 @@
         "pa": "ਪੰਜਾਬੀ"
     }
 }
+

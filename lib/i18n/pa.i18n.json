@@ -1,4 +1,4 @@
-{
+﻿{
     "AboutScreen": {
         "installRefer": "इंस्टॉलेशन स्रोत",
         "installTime": "इंस्टॉलेशन का समय",
@@ -51,9 +51,8 @@
         "clearFileContentTips": "क्या आप वाकई प्रोफ़ाइल फ़ाइल की सामग्री साफ़ करना चाहते हैं? प्रोफ़ाइल फ़ाइल को साफ़ करने से डेटा हानि या असामान्य ऐप कार्य हो सकते हैं, कृपया सावधानी से काम करें"
     },
     "HomeScreen": {
-        "toSelectServer": "कृपया एक सर्वर चुनें",
-        "invalidServer": "अमान्य है, कृपया पुनः चुनें",
-        "disabledServer": "अक्षम है, कृपया पुनः चुनें",
+        "invalidServer": "[$p] ਹੁਣ ਵੈਧ ਨਹੀਂ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਸਰਵਰ ਮੁੜ ਚੁਣੋ",
+        "disabledServer": "[$p] ਅਯੋਗ ਕੀਤਾ ਗਿਆ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਸਰਵਰ ਮੁੜ ਚੁਣੋ",
         "expiredServer": "कोई सर्वर उपलब्ध नहीं है, प्रोफ़ाइल समाप्त या अक्षम हो सकती हैं",
         "systemProxyTips": "socks:$sp,http(s):$hp",
         "myLinkEmpty": "कृपया उपयोग करने से पहले [शॉर्टकट लिंक] सेट करें",
@@ -105,7 +104,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "CSV प्रारूप में कॉपी किया गया",
-        "selectType": "विचलन प्रकार चुनें"
+        "selectType": "विचलन प्रकार चुनें",
+        "loopbackWarning": "ਨੈੱਟਵਰਕ ਵਿੱਚ ਲੂਪਬੈਕ ਹੋ ਸਕਦਾ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਨੈੱਟਵਰਕ ਐਡਾਪਟਰ ਸੈਟਿੰਗਾਂ ਦੀ ਜਾਂਚ ਕਰੋ"
     },
     "PerAppAndroidScreen": {
         "title": "प्रति-ऐप प्रॉक्सी",
@@ -388,6 +388,7 @@
         "account": "खाता",
         "password": "पासवर्ड",
         "decryptPassword": "डिक्रोरप्ट पासवर्ड",
+        "overwriteOutboundDns": "DNS: ਓਵਰਰਾਈਡ ਕਰੋ [@:{SettingsScreen.dnsTypeOutbound}]",
         "required": "आवश्यक",
         "type": "प्रकार",
         "path": "पथ",
@@ -648,6 +649,7 @@
         "no": "Norsk",
         "da": "Dansk",
         "hi": "हिन्दी",
+        "id": "Bahasa Indonesia",
         "ur": "اردو",
         "bn": "বাংলা",
         "el": "Ελληνικά",
@@ -657,3 +659,4 @@
         "pa": "ਪੰਜਾਬੀ"
     }
 }
+

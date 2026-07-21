@@ -119,6 +119,7 @@ class TranslationsTr with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$tr implements Translations$HomeScreen$en {
 	final TranslationsTr _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'Lütfen bir Sunucu Seçin';
-	@override String get invalidServer => 'geçersiz, lütfen tekrar seçin';
-	@override String get disabledServer => 'devre dışı, lütfen tekrar seçin';
+	@override String invalidServer({required Object p}) => '[${p}] artık geçerli değil, lütfen sunucuyu tekrar seçin';
+	@override String disabledServer({required Object p}) => '[${p}] devre dışı bırakıldı, lütfen sunucuyu tekrar seçin';
 	@override String get expiredServer => 'Kullanılabilir sunucu yok, profillerin süresi dolmuş veya devre dışı bırakılmış olabilir';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks: ${sp}, http(s): ${hp}';
 	@override String get myLinkEmpty => 'Lütfen kullanmadan önce [Kısayol Bağlantısı] kurulumunu yapın';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$tr implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'CSV formatına kopyalandı';
 	@override String get selectType => 'Yönlendirme Türünü Seçin';
+	@override String get loopbackWarning => 'Ağ döngüsü oluşmuş olabilir. Lütfen ağ bağdaştırıcısı ayarlarını kontrol edin';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$tr implements Translations$meta$en {
 	@override String get account => 'Hesap';
 	@override String get password => 'Şifre';
 	@override String get decryptPassword => 'Şifre Çözme Şifresi';
+	@override String get overwriteOutboundDns => 'DNS: Geçersiz kıl [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'Gerekli';
 	@override String get type => 'Tür';
 	@override String get path => 'Yol';
@@ -989,9 +991,8 @@ extension on TranslationsTr {
 			'FileContentViewerScreen.title' => 'Dosya İçeriği Görüntüleyici',
 			'FileContentViewerScreen.clearFileContent' => 'Dosya içeriğini temizlemek istediğinizden emin misiniz?',
 			'FileContentViewerScreen.clearFileContentTips' => 'Profil dosyası içeriğini temizlemek istediğinizden emin misiniz? Profil dosyasının temizlenmesi veri kaybına veya anormal uygulama işlevlerine neden olabilir, lütfen dikkatli olun',
-			'HomeScreen.toSelectServer' => 'Lütfen bir Sunucu Seçin',
-			'HomeScreen.invalidServer' => 'geçersiz, lütfen tekrar seçin',
-			'HomeScreen.disabledServer' => 'devre dışı, lütfen tekrar seçin',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] artık geçerli değil, lütfen sunucuyu tekrar seçin',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] devre dışı bırakıldı, lütfen sunucuyu tekrar seçin',
 			'HomeScreen.expiredServer' => 'Kullanılabilir sunucu yok, profillerin süresi dolmuş veya devre dışı bırakılmış olabilir',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks: ${sp}, http(s): ${hp}',
 			'HomeScreen.myLinkEmpty' => 'Lütfen kullanmadan önce [Kısayol Bağlantısı] kurulumunu yapın',
@@ -1034,6 +1035,7 @@ extension on TranslationsTr {
 			'NetConnectionsFilterScreen.chain' => 'Giden',
 			'NetConnectionsScreen.copyAsCSV' => 'CSV formatına kopyalandı',
 			'NetConnectionsScreen.selectType' => 'Yönlendirme Türünü Seçin',
+			'NetConnectionsScreen.loopbackWarning' => 'Ağ döngüsü oluşmuş olabilir. Lütfen ağ bağdaştırıcısı ayarlarını kontrol edin',
 			'PerAppAndroidScreen.title' => 'Uygulama Başına Proxy',
 			'PerAppAndroidScreen.whiteListMode' => 'Beyaz Liste Modu',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Etkinleştirildiğinde: yalnızca işaretli olan uygulamalar proxy üzerinden geçer; etkinleştirilmediğinde: yalnızca işaretli olmayan uygulamalar proxy üzerinden geçer',
@@ -1296,6 +1298,7 @@ extension on TranslationsTr {
 			'meta.account' => 'Hesap',
 			'meta.password' => 'Şifre',
 			'meta.decryptPassword' => 'Şifre Çözme Şifresi',
+			'meta.overwriteOutboundDns' => 'DNS: Geçersiz kıl [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'Gerekli',
 			'meta.type' => 'Tür',
 			'meta.path' => 'Yol',
@@ -1463,9 +1466,9 @@ extension on TranslationsTr {
 			'isp.unbind' => ({required Object p}) => 'Bağlantıyı Kes [${p}]',
 			'isp.faq' => ({required Object p}) => 'SSS [${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram [${p}]',
-			'isp.follow' => ({required Object p}) => 'Takip Et [${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Takip Et [${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Geçersiz veya süresi dolmuş',
 			'permission.camera' => 'Kamera',
 			'permission.screen' => 'Ekran Kaydı',
@@ -1540,6 +1543,7 @@ extension on TranslationsTr {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

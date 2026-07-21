@@ -119,6 +119,7 @@ class TranslationsIt with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$it implements Translations$HomeScreen$en {
 	final TranslationsIt _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'Seleziona un Server';
-	@override String get invalidServer => 'non è valido, seleziona di nuovo';
-	@override String get disabledServer => 'è disabilitato, seleziona di nuovo';
+	@override String invalidServer({required Object p}) => '[${p}] non è più valido, seleziona di nuovo un server';
+	@override String disabledServer({required Object p}) => '[${p}] è stato disabilitato, seleziona di nuovo un server';
 	@override String get expiredServer => 'Nessun server disponibile, i profili potrebbero essere scaduti o disabilitati';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'Configura [Link Rapido] prima di usarlo';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$it implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'Copiato in formato CSV';
 	@override String get selectType => 'Seleziona Tipo di Diversione';
+	@override String get loopbackWarning => 'Potrebbe essersi verificato un loop di rete. Controlla le impostazioni della scheda di rete';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$it implements Translations$meta$en {
 	@override String get account => 'Account';
 	@override String get password => 'Password';
 	@override String get decryptPassword => 'Password di decrittazione';
+	@override String get overwriteOutboundDns => 'DNS: Sovrascrivi [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'Richiesto';
 	@override String get type => 'Tipo';
 	@override String get path => 'Percorso';
@@ -989,9 +991,8 @@ extension on TranslationsIt {
 			'FileContentViewerScreen.title' => 'Visualizzatore Contenuto File',
 			'FileContentViewerScreen.clearFileContent' => 'Sei sicuro di voler cancellare il contenuto del file?',
 			'FileContentViewerScreen.clearFileContentTips' => 'Sei sicuro di voler cancellare il contenuto del file di Profilo? La cancellazione del file di Profilo può causare la perdita di dati o funzioni anomale dell\'applicazione, procedere con cautela',
-			'HomeScreen.toSelectServer' => 'Seleziona un Server',
-			'HomeScreen.invalidServer' => 'non è valido, seleziona di nuovo',
-			'HomeScreen.disabledServer' => 'è disabilitato, seleziona di nuovo',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] non è più valido, seleziona di nuovo un server',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] è stato disabilitato, seleziona di nuovo un server',
 			'HomeScreen.expiredServer' => 'Nessun server disponibile, i profili potrebbero essere scaduti o disabilitati',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'Configura [Link Rapido] prima di usarlo',
@@ -1034,6 +1035,7 @@ extension on TranslationsIt {
 			'NetConnectionsFilterScreen.chain' => 'In uscita',
 			'NetConnectionsScreen.copyAsCSV' => 'Copiato in formato CSV',
 			'NetConnectionsScreen.selectType' => 'Seleziona Tipo di Diversione',
+			'NetConnectionsScreen.loopbackWarning' => 'Potrebbe essersi verificato un loop di rete. Controlla le impostazioni della scheda di rete',
 			'PerAppAndroidScreen.title' => 'Proxy per App',
 			'PerAppAndroidScreen.whiteListMode' => 'Modalità Whitelist',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Se abilitata: solo le app selezionate usano il proxy; se disabilitata: solo le app non selezionate usano il proxy',
@@ -1296,6 +1298,7 @@ extension on TranslationsIt {
 			'meta.account' => 'Account',
 			'meta.password' => 'Password',
 			'meta.decryptPassword' => 'Password di decrittazione',
+			'meta.overwriteOutboundDns' => 'DNS: Sovrascrivi [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'Richiesto',
 			'meta.type' => 'Tipo',
 			'meta.path' => 'Percorso',
@@ -1463,9 +1466,9 @@ extension on TranslationsIt {
 			'isp.unbind' => ({required Object p}) => 'Disassocia[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'Segui[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Segui[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Non valido o scaduto',
 			'permission.camera' => 'Fotocamera',
 			'permission.screen' => 'Registrazione Schermo',
@@ -1540,6 +1543,7 @@ extension on TranslationsIt {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

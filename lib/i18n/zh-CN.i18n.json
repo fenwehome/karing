@@ -1,4 +1,4 @@
-{
+﻿{
     "AboutScreen": {
         "installRefer": "安装参考",
         "installTime": "安装时间",
@@ -52,8 +52,8 @@
     },
     "HomeScreen": {
         "toSelectServer": "请选择服务器",
-        "invalidServer": "已失效,请重新选择",
-        "disabledServer": "已被禁用,请重新选择",
+        "invalidServer": "[$p]已失效,请重新选择服务器",
+        "disabledServer": "[$p]已被禁用,请重新选择服务器",
         "expiredServer": "无可用服务器:配置可能已过期或被禁用",
         "systemProxyTips": "SOCKS代理端口:$sp, HTTP(S)代理端口:$hp",
         "myLinkEmpty": "请先设置[快捷链接]后再使用",
@@ -105,7 +105,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "已复制为CSV格式",
-        "selectType": "选择分流类型"
+        "selectType": "选择分流类型",
+        "loopbackWarning": "网络可能出现了回环,请检查网卡设置"
     },
     "PerAppAndroidScreen": {
         "title": "分应用代理",
@@ -388,6 +389,7 @@
         "account": "账号",
         "password": "密码",
         "decryptPassword": "解密密码",
+        "overwriteOutboundDns": "DNS:覆盖[@:{SettingsScreen.dnsTypeOutbound}]",
         "required": "必填",
         "type": "类型",
         "path": "路径",
@@ -648,6 +650,7 @@
         "no": "Norsk",
         "da": "Dansk",
         "hi": "हिन्दी",
+        "id": "Bahasa Indonesia",
         "ur": "اردو",
         "bn": "বাংলা",
         "el": "Ελληνικά",

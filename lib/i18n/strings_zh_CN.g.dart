@@ -119,6 +119,7 @@ class TranslationsZhCn with BaseTranslations<AppLocale, Translations> implements
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -237,8 +238,8 @@ class Translations$HomeScreen$zh_CN implements Translations$HomeScreen$en {
 
 	// Translations
 	@override String get toSelectServer => '请选择服务器';
-	@override String get invalidServer => '已失效,请重新选择';
-	@override String get disabledServer => '已被禁用,请重新选择';
+	@override String invalidServer({required Object p}) => '[${p}]已失效,请重新选择服务器';
+	@override String disabledServer({required Object p}) => '[${p}]已被禁用,请重新选择服务器';
 	@override String get expiredServer => '无可用服务器:配置可能已过期或被禁用';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'SOCKS代理端口:${sp}, HTTP(S)代理端口:${hp}';
 	@override String get myLinkEmpty => '请先设置[快捷链接]后再使用';
@@ -326,6 +327,7 @@ class Translations$NetConnectionsScreen$zh_CN implements Translations$NetConnect
 	// Translations
 	@override String get copyAsCSV => '已复制为CSV格式';
 	@override String get selectType => '选择分流类型';
+	@override String get loopbackWarning => '网络可能出现了回环,请检查网卡设置';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +670,7 @@ class Translations$meta$zh_CN implements Translations$meta$en {
 	@override String get account => '账号';
 	@override String get password => '密码';
 	@override String get decryptPassword => '解密密码';
+	@override String get overwriteOutboundDns => 'DNS:覆盖[${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => '必填';
 	@override String get type => '类型';
 	@override String get path => '路径';
@@ -990,8 +993,8 @@ extension on TranslationsZhCn {
 			'FileContentViewerScreen.clearFileContent' => '确认清空文件内容?',
 			'FileContentViewerScreen.clearFileContentTips' => '确认清空配置文件内容? 清空配置文件可能会导致数据丢失或应用功能异常, 请谨慎操作',
 			'HomeScreen.toSelectServer' => '请选择服务器',
-			'HomeScreen.invalidServer' => '已失效,请重新选择',
-			'HomeScreen.disabledServer' => '已被禁用,请重新选择',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}]已失效,请重新选择服务器',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}]已被禁用,请重新选择服务器',
 			'HomeScreen.expiredServer' => '无可用服务器:配置可能已过期或被禁用',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'SOCKS代理端口:${sp}, HTTP(S)代理端口:${hp}',
 			'HomeScreen.myLinkEmpty' => '请先设置[快捷链接]后再使用',
@@ -1034,6 +1037,7 @@ extension on TranslationsZhCn {
 			'NetConnectionsFilterScreen.chain' => '出站',
 			'NetConnectionsScreen.copyAsCSV' => '已复制为CSV格式',
 			'NetConnectionsScreen.selectType' => '选择分流类型',
+			'NetConnectionsScreen.loopbackWarning' => '网络可能出现了回环,请检查网卡设置',
 			'PerAppAndroidScreen.title' => '分应用代理',
 			'PerAppAndroidScreen.whiteListMode' => '白名单模式',
 			'PerAppAndroidScreen.whiteListModeTip' => '启用后:仅代理已勾选的App;未启用:仅代理未勾选的App',
@@ -1296,6 +1300,7 @@ extension on TranslationsZhCn {
 			'meta.account' => '账号',
 			'meta.password' => '密码',
 			'meta.decryptPassword' => '解密密码',
+			'meta.overwriteOutboundDns' => 'DNS:覆盖[${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => '必填',
 			'meta.type' => '类型',
 			'meta.path' => '路径',
@@ -1462,10 +1467,10 @@ extension on TranslationsZhCn {
 			'isp.bind' => '绑定到[${_root.meta.isp}]',
 			'isp.unbind' => ({required Object p}) => '解除绑定[${p}]',
 			'isp.faq' => ({required Object p}) => '常见问题[${p}]',
-			'isp.customerService' => ({required Object p}) => '客服[${p}]',
-			'isp.follow' => ({required Object p}) => '关注[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.customerService' => ({required Object p}) => '客服[${p}]',
+			'isp.follow' => ({required Object p}) => '关注[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}]无效或已过期',
 			'permission.camera' => '摄像头',
 			'permission.screen' => '屏幕录制',
@@ -1540,6 +1545,7 @@ extension on TranslationsZhCn {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

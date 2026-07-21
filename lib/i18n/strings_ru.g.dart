@@ -119,6 +119,7 @@ class TranslationsRu with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$ru implements Translations$HomeScreen$en {
 	final TranslationsRu _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'Выберите сервер';
-	@override String get invalidServer => 'Не работает. Пожалуйста, выберите другой';
-	@override String get disabledServer => 'Был отключен. Пожалуйста, выберите другой';
+	@override String invalidServer({required Object p}) => '[${p}] больше недействителен, пожалуйста, выберите сервер снова';
+	@override String disabledServer({required Object p}) => '[${p}] отключен, пожалуйста, выберите сервер снова';
 	@override String get expiredServer => 'Нет доступного сервера: возможно, профиль устарел или отключен';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'Пожалуйста, настройте [Быструю ссылку] перед использованием';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$ru implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'Скопировано в CSV формате';
 	@override String get selectType => 'Выберите тип перенаправления';
+	@override String get loopbackWarning => 'Возможно, возникло сетевое зацикливание. Проверьте настройки сетевого адаптера';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$ru implements Translations$meta$en {
 	@override String get account => 'Аккаунт';
 	@override String get password => 'Пароль';
 	@override String get decryptPassword => 'Пароль расшифровки';
+	@override String get overwriteOutboundDns => 'DNS: Переопределить [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'Необходимо';
 	@override String get type => 'тип';
 	@override String get path => 'путь';
@@ -989,9 +991,8 @@ extension on TranslationsRu {
 			'FileContentViewerScreen.title' => 'Просмотр содержимого файла',
 			'FileContentViewerScreen.clearFileContent' => 'Вы уверены, что хотите очистить содержимое файла?',
 			'FileContentViewerScreen.clearFileContentTips' => 'Вы уверены, что  хотите очистить содержимое файла профиля? Очистка файла профиля может привести к потере данных или некорректной работе приложения. Действуйте осторожно.',
-			'HomeScreen.toSelectServer' => 'Выберите сервер',
-			'HomeScreen.invalidServer' => 'Не работает. Пожалуйста, выберите другой',
-			'HomeScreen.disabledServer' => 'Был отключен. Пожалуйста, выберите другой',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] больше недействителен, пожалуйста, выберите сервер снова',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] отключен, пожалуйста, выберите сервер снова',
 			'HomeScreen.expiredServer' => 'Нет доступного сервера: возможно, профиль устарел или отключен',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'Пожалуйста, настройте [Быструю ссылку] перед использованием',
@@ -1034,6 +1035,7 @@ extension on TranslationsRu {
 			'NetConnectionsFilterScreen.chain' => 'Исходящий',
 			'NetConnectionsScreen.copyAsCSV' => 'Скопировано в CSV формате',
 			'NetConnectionsScreen.selectType' => 'Выберите тип перенаправления',
+			'NetConnectionsScreen.loopbackWarning' => 'Возможно, возникло сетевое зацикливание. Проверьте настройки сетевого адаптера',
 			'PerAppAndroidScreen.title' => 'Проксируемые приложения',
 			'PerAppAndroidScreen.whiteListMode' => 'Режим белого списка',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Если включено: перенаправляются через прокси-сервер только те приложения, которые были отмечены. Если выключено: перенаправляются через прокси-сервер только те приложения, которые не были отмечены.',
@@ -1296,6 +1298,7 @@ extension on TranslationsRu {
 			'meta.account' => 'Аккаунт',
 			'meta.password' => 'Пароль',
 			'meta.decryptPassword' => 'Пароль расшифровки',
+			'meta.overwriteOutboundDns' => 'DNS: Переопределить [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'Необходимо',
 			'meta.type' => 'тип',
 			'meta.path' => 'путь',
@@ -1463,9 +1466,9 @@ extension on TranslationsRu {
 			'isp.unbind' => ({required Object p}) => 'Отвязать[${p}]',
 			'isp.faq' => ({required Object p}) => 'Часто задаваемые вопросы[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Служба поддержки клиентов[${p}]',
-			'isp.follow' => ({required Object p}) => 'Следуйте[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Следуйте[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}]Недействительно, или срок действия истек',
 			'permission.camera' => 'Камера',
 			'permission.screen' => 'Запись экрана',
@@ -1540,6 +1543,7 @@ extension on TranslationsRu {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

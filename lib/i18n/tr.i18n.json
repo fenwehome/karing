@@ -1,4 +1,4 @@
-{
+﻿{
     "AboutScreen": {
         "installRefer": "Kurulum Referansı",
         "installTime": "Kurulum Zamanı",
@@ -51,9 +51,8 @@
         "clearFileContentTips": "Profil dosyası içeriğini temizlemek istediğinizden emin misiniz? Profil dosyasının temizlenmesi veri kaybına veya anormal uygulama işlevlerine neden olabilir, lütfen dikkatli olun"
     },
     "HomeScreen": {
-        "toSelectServer": "Lütfen bir Sunucu Seçin",
-        "invalidServer": "geçersiz, lütfen tekrar seçin",
-        "disabledServer": "devre dışı, lütfen tekrar seçin",
+        "invalidServer": "[$p] artık geçerli değil, lütfen sunucuyu tekrar seçin",
+        "disabledServer": "[$p] devre dışı bırakıldı, lütfen sunucuyu tekrar seçin",
         "expiredServer": "Kullanılabilir sunucu yok, profillerin süresi dolmuş veya devre dışı bırakılmış olabilir",
         "systemProxyTips": "socks: $sp, http(s): $hp",
         "myLinkEmpty": "Lütfen kullanmadan önce [Kısayol Bağlantısı] kurulumunu yapın",
@@ -105,7 +104,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "CSV formatına kopyalandı",
-        "selectType": "Yönlendirme Türünü Seçin"
+        "selectType": "Yönlendirme Türünü Seçin",
+        "loopbackWarning": "Ağ döngüsü oluşmuş olabilir. Lütfen ağ bağdaştırıcısı ayarlarını kontrol edin"
     },
     "PerAppAndroidScreen": {
         "title": "Uygulama Başına Proxy",
@@ -388,6 +388,7 @@
         "account": "Hesap",
         "password": "Şifre",
         "decryptPassword": "Şifre Çözme Şifresi",
+        "overwriteOutboundDns": "DNS: Geçersiz kıl [@:{SettingsScreen.dnsTypeOutbound}]",
         "required": "Gerekli",
         "type": "Tür",
         "path": "Yol",
@@ -648,6 +649,7 @@
         "no": "Norsk",
         "da": "Dansk",
         "hi": "हिन्दी",
+        "id": "Bahasa Indonesia",
         "ur": "اردو",
         "bn": "বাংলা",
         "el": "Ελληνικά",
@@ -657,3 +659,4 @@
         "pa": "ਪੰਜਾਬੀ"
     }
 }
+

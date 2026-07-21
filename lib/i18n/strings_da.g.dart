@@ -119,6 +119,7 @@ class TranslationsDa with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$da implements Translations$HomeScreen$en {
 	final TranslationsDa _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'Vælg venligst en server';
-	@override String get invalidServer => 'er ugyldig, vælg venligst igen';
-	@override String get disabledServer => 'er deaktiveret, vælg venligst igen';
+	@override String invalidServer({required Object p}) => '[${p}] er ikke længere gyldig, vælg venligst en server igen';
+	@override String disabledServer({required Object p}) => '[${p}] er deaktiveret, vælg venligst en server igen';
 	@override String get expiredServer => 'Ingen servere tilgængelige, profiler kan være udløbet eller deaktiveret';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'Opsæt venligst [Genvejslink] før brug';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$da implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'Kopieret til CSV-format';
 	@override String get selectType => 'Vælg omledningstype';
+	@override String get loopbackWarning => 'Der kan være opstået en netværksløkke. Kontroller indstillingerne for netværksadapteren';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$da implements Translations$meta$en {
 	@override String get account => 'Konto';
 	@override String get password => 'Adgangskode';
 	@override String get decryptPassword => 'Dekryptering adgangskode';
+	@override String get overwriteOutboundDns => 'DNS: Tilsidesæt [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'Påkrævet';
 	@override String get type => 'Type';
 	@override String get path => 'Sti';
@@ -989,9 +991,8 @@ extension on TranslationsDa {
 			'FileContentViewerScreen.title' => 'Filindholdsvisning',
 			'FileContentViewerScreen.clearFileContent' => 'Er du sikker på, at du vil slette filindholdet?',
 			'FileContentViewerScreen.clearFileContentTips' => 'Er du sikker på, at du vil slette indholdet af profilfilen? Sletning af profilfilen kan føre til tab af data eller unormale app-funktioner, vær forsigtig',
-			'HomeScreen.toSelectServer' => 'Vælg venligst en server',
-			'HomeScreen.invalidServer' => 'er ugyldig, vælg venligst igen',
-			'HomeScreen.disabledServer' => 'er deaktiveret, vælg venligst igen',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] er ikke længere gyldig, vælg venligst en server igen',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] er deaktiveret, vælg venligst en server igen',
 			'HomeScreen.expiredServer' => 'Ingen servere tilgængelige, profiler kan være udløbet eller deaktiveret',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'Opsæt venligst [Genvejslink] før brug',
@@ -1034,6 +1035,7 @@ extension on TranslationsDa {
 			'NetConnectionsFilterScreen.chain' => 'Udgående',
 			'NetConnectionsScreen.copyAsCSV' => 'Kopieret til CSV-format',
 			'NetConnectionsScreen.selectType' => 'Vælg omledningstype',
+			'NetConnectionsScreen.loopbackWarning' => 'Der kan være opstået en netværksløkke. Kontroller indstillingerne for netværksadapteren',
 			'PerAppAndroidScreen.title' => 'Proxy pr. app',
 			'PerAppAndroidScreen.whiteListMode' => 'Whitelist-tilstand',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Når aktiveret: kun de markerede apps bruger proxy; når ikke aktiveret: kun de ikke-markerede apps bruger proxy',
@@ -1296,6 +1298,7 @@ extension on TranslationsDa {
 			'meta.account' => 'Konto',
 			'meta.password' => 'Adgangskode',
 			'meta.decryptPassword' => 'Dekryptering adgangskode',
+			'meta.overwriteOutboundDns' => 'DNS: Tilsidesæt [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'Påkrævet',
 			'meta.type' => 'Type',
 			'meta.path' => 'Sti',
@@ -1463,9 +1466,9 @@ extension on TranslationsDa {
 			'isp.unbind' => ({required Object p}) => 'Fjern binding[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'Følg[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Følg[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Ugyldig eller udløbet',
 			'permission.camera' => 'Kamera',
 			'permission.screen' => 'Skærmoptagelse',
@@ -1540,6 +1543,7 @@ extension on TranslationsDa {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

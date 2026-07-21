@@ -17,6 +17,7 @@ import 'package:karing/app/utils/network_utils.dart';
 import 'package:karing/app/utils/path_utils.dart';
 import 'package:karing/app/utils/platform_utils.dart';
 import 'package:karing/app/utils/singbox_config_builder.dart';
+import 'package:karing/app/utils/singbox_outbound.dart';
 import 'package:karing/i18n/strings.g.dart';
 import 'package:karing/screens/widgets/text_field.dart';
 import 'package:vpn_service/proxy_manager.dart';
@@ -1082,8 +1083,11 @@ class SettingConfigItemMux {
   bool enable = false;
   bool padding = false;
   String protocol = "h2mux";
-  int maxStream = 8;
+  int? maxConnections;
+  int? minStream = 1;
+  int? maxStream = 8;
 
+  SingboxOutboundMultiplexBrutalOptions? brutal;
   List<String> outboundTypes = []; //vmess,vless,trojan,shadowsocks
 
   Map<String, dynamic> toJson() {
@@ -1091,7 +1095,10 @@ class SettingConfigItemMux {
       'enable': enable,
       'padding': padding,
       'protocol': protocol,
+      'max_connections': maxConnections,
       'max_streams': maxStream,
+      'min_streams': minStream,
+      'brutal': brutal?.toJson(),
       'outbound_types': outboundTypes,
     };
     return ret;
@@ -1108,7 +1115,12 @@ class SettingConfigItemMux {
     if (protocol.isEmpty) {
       protocol = "h2mux";
     }
-    maxStream = map["max_streams"] ?? 8;
+    maxConnections = map["max_connections"];
+    minStream = map["min_streams"];
+    maxStream = map["max_streams"];
+    brutal = SingboxOutboundMultiplexBrutalOptions.fromJsonStatic(
+      map["brutal"],
+    );
     outboundTypes = ConvertUtils.getListStringFromDynamic(
       map["outbound_types"],
       true,
@@ -1551,9 +1563,9 @@ class SettingConfig {
     "FLClash",
     "ClashMeta",
     "v2ray",
+    "sing-box $kCoreVersion",
     "NekoBox/Android/1.4.1 (Prefer ClashMeta Format)",
     "HiddifyNext",
-    "sing-box $kCoreVersion",
   ];
   static const Map<String, String> kUserAgentListOldUpgrade = {
     "sing-box": "sing-box $kCoreVersion",

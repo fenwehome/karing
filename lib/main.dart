@@ -45,7 +45,7 @@ import 'package:screen_retriever/screen_retriever.dart';
 import 'package:tray_manager/tray_manager.dart';
 import 'package:vpn_service/vpn_service.dart';
 import 'package:window_manager/window_manager.dart';
-import 'package:windows_single_instance/windows_single_instance.dart';
+import 'package:flutter_single_instance/flutter_single_instance.dart';
 
 List<String> processArgs = [];
 StartFailedReason? startFailedReason;
@@ -101,6 +101,9 @@ void main(List<String> args) async {
   await RemoteISPConfigManager.init();
   if (!SettingManager.getConfig().disableAppImproveData) {
     await SentryUtilsPrivate.init();
+  }
+  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    await _ensureSingleInstanceOrExit();
   }
 
   //SemanticsBinding.instance.ensureSemantics(); //showSemanticsDebugger
@@ -204,21 +207,7 @@ Future<void> run(List<String> args) async {
       }
     }
 
-    if (Platform.isWindows) {
-      await WindowsSingleInstance.ensureSingleInstance(
-        args,
-        "karing_single_identifier",
-        onSecondWindow: (args) async {
-          if (await windowManager.isMinimized()) {
-            await windowManager.restore();
-          }
-          await windowManager.focus();
-        },
-      );
-    }
-
     await AutoUpdateManager.init();
-
     bool disableOrientation = await DeviceUtils.disableOrientation();
     if (!disableOrientation) {
       if (SettingManager.getConfig().ui.autoOrientation) {
@@ -262,6 +251,44 @@ Future<void> run(List<String> args) async {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   }
   runApp(TranslationProvider(child: const MyApp()));
+}
+
+Future<void> _ensureSingleInstanceOrExit() async {
+  FlutterSingleInstance.debugMode = false;
+  // Use a stable lock file key. On Linux, process names can vary by launch
+  // path (e.g. xdg-open/AppImage), which breaks single-instance detection.
+  FlutterSingleInstance.processName = AppUtils.getId();
+  FlutterSingleInstance.onFocus = (metadata) {
+    var args = metadata["args"] as List<dynamic>?;
+    if (args != null && args.isNotEmpty) {
+      String schemeArg = args.firstWhere((element) {
+        final arg = element.toString().trim();
+        return arg.startsWith(SystemSchemeUtils.getKaringSchemeWith()) ||
+            arg.startsWith(SystemSchemeUtils.getClashSchemeWith()) ||
+            arg.startsWith(SystemSchemeUtils.getSingboxSchemeWith());
+      }, orElse: () => '');
+      if (schemeArg.isNotEmpty) {
+        Biz.onEventSingletonInstance?.call(schemeArg);
+      }
+    }
+  };
+
+  final singleInstance = FlutterSingleInstance();
+  final isFirst = await singleInstance.isFirstInstance(
+    maxRetries: Platform.isLinux ? 5 : 1,
+    retryInterval: const Duration(milliseconds: 250),
+  );
+
+  if (!isFirst) {
+    try {
+      await singleInstance.focus({"args": processArgs});
+    } catch (err) {
+      Log.w("single instance focus exception: ${err.toString()}");
+    }
+
+    // Never continue launching a second process.
+    exit(0);
+  }
 }
 
 class MyApp extends StatefulWidget {
@@ -361,7 +388,8 @@ class MyAppState extends State<MyApp>
       return element.trim().startsWith(
             SystemSchemeUtils.getKaringSchemeWith(),
           ) ||
-          element.trim().startsWith(SystemSchemeUtils.getClashSchemeWith());
+          element.trim().startsWith(SystemSchemeUtils.getClashSchemeWith()) ||
+          element.trim().startsWith(SystemSchemeUtils.getSingboxSchemeWith());
     }, orElse: () => '');
 
     List<NavigatorObserver> observers = [];

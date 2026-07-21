@@ -119,6 +119,7 @@ class TranslationsBn with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$bn implements Translations$HomeScreen$en {
 	final TranslationsBn _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'অনুগ্রহ করে একটি সার্ভার নির্বাচন করুন';
-	@override String get invalidServer => 'অকার্যকর, অনুগ্রহ করে আবার নির্বাচন করুন';
-	@override String get disabledServer => 'নিষ্ক্রিয় করা হয়েছে, অনুগ্রহ করে আবার নির্বাচন করুন';
+	@override String invalidServer({required Object p}) => '[${p}] আর বৈধ নয়, অনুগ্রহ করে আবার সার্ভার নির্বাচন করুন';
+	@override String disabledServer({required Object p}) => '[${p}] নিষ্ক্রিয় করা হয়েছে, অনুগ্রহ করে আবার সার্ভার নির্বাচন করুন';
 	@override String get expiredServer => 'কোনো সার্ভার উপলব্ধ নেই, প্রোফাইলগুলির মেয়াদ শেষ হতে পারে বা নিষ্ক্রিয় হতে পারে';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'ব্যবহার করার আগে অনুগ্রহ করে [শর্টকাট লিঙ্ক] সেট আপ করুন';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$bn implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'CSV ফরম্যাটে কপি করা হয়েছে';
 	@override String get selectType => 'ডাইভারশন টাইপ নির্বাচন করুন';
+	@override String get loopbackWarning => 'নেটওয়ার্কে লুপব্যাক হতে পারে, অনুগ্রহ করে নেটওয়ার্ক অ্যাডাপ্টারের সেটিংস পরীক্ষা করুন';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$bn implements Translations$meta$en {
 	@override String get account => 'অ্যাকাউন্ট';
 	@override String get password => 'পাসওয়ার্ড';
 	@override String get decryptPassword => 'ডিক্রিপ্ট পাসওয়ার্ড';
+	@override String get overwriteOutboundDns => 'DNS: ওভাররাইড [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'প্রয়োজন';
 	@override String get type => 'ধরন';
 	@override String get path => 'পাথ';
@@ -989,9 +991,8 @@ extension on TranslationsBn {
 			'FileContentViewerScreen.title' => 'ফাইল কন্টেন্ট ভিউয়ার',
 			'FileContentViewerScreen.clearFileContent' => 'আপনি কি নিশ্চিত যে আপনি ফাইলের বিষয়বস্তু মুছতে চান?',
 			'FileContentViewerScreen.clearFileContentTips' => 'আপনি কি নিশ্চিত যে আপনি প্রোফাইল ফাইলের বিষয়বস্তু মুছতে চান? প্রোফাইল ফাইল মুছলে ডেটা হারানো বা অ্যাপের অস্বাভাবিক কাজ হতে পারে, অনুগ্রহ করে সাবধানে কাজ করুন',
-			'HomeScreen.toSelectServer' => 'অনুগ্রহ করে একটি সার্ভার নির্বাচন করুন',
-			'HomeScreen.invalidServer' => 'অকার্যকর, অনুগ্রহ করে আবার নির্বাচন করুন',
-			'HomeScreen.disabledServer' => 'নিষ্ক্রিয় করা হয়েছে, অনুগ্রহ করে আবার নির্বাচন করুন',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] আর বৈধ নয়, অনুগ্রহ করে আবার সার্ভার নির্বাচন করুন',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] নিষ্ক্রিয় করা হয়েছে, অনুগ্রহ করে আবার সার্ভার নির্বাচন করুন',
 			'HomeScreen.expiredServer' => 'কোনো সার্ভার উপলব্ধ নেই, প্রোফাইলগুলির মেয়াদ শেষ হতে পারে বা নিষ্ক্রিয় হতে পারে',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'ব্যবহার করার আগে অনুগ্রহ করে [শর্টকাট লিঙ্ক] সেট আপ করুন',
@@ -1034,6 +1035,7 @@ extension on TranslationsBn {
 			'NetConnectionsFilterScreen.chain' => 'আউটবাউন্ড',
 			'NetConnectionsScreen.copyAsCSV' => 'CSV ফরম্যাটে কপি করা হয়েছে',
 			'NetConnectionsScreen.selectType' => 'ডাইভারশন টাইপ নির্বাচন করুন',
+			'NetConnectionsScreen.loopbackWarning' => 'নেটওয়ার্কে লুপব্যাক হতে পারে, অনুগ্রহ করে নেটওয়ার্ক অ্যাডাপ্টারের সেটিংস পরীক্ষা করুন',
 			'PerAppAndroidScreen.title' => 'প্রতি-অ্যাপ প্রক্সি',
 			'PerAppAndroidScreen.whiteListMode' => 'হোয়াইটলিস্ট মোড',
 			'PerAppAndroidScreen.whiteListModeTip' => 'সক্ষম করা হলে: শুধুমাত্র চিহ্নিত অ্যাপগুলি প্রক্সি হয়; সক্ষম না করা হলে: শুধুমাত্র অচিহ্নিত অ্যাপগুলি প্রক্সি হয়',
@@ -1296,6 +1298,7 @@ extension on TranslationsBn {
 			'meta.account' => 'অ্যাকাউন্ট',
 			'meta.password' => 'পাসওয়ার্ড',
 			'meta.decryptPassword' => 'ডিক্রিপ্ট পাসওয়ার্ড',
+			'meta.overwriteOutboundDns' => 'DNS: ওভাররাইড [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'প্রয়োজন',
 			'meta.type' => 'ধরন',
 			'meta.path' => 'পাথ',
@@ -1463,9 +1466,9 @@ extension on TranslationsBn {
 			'isp.unbind' => ({required Object p}) => 'আনলিঙ্ক করুন[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'অনুসরণ করুন[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'অনুসরণ করুন[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] অকার্যকর বা মেয়াদ শেষ',
 			'permission.camera' => 'ক্যামেরা',
 			'permission.screen' => 'স্ক্রিন রেকর্ডিং',
@@ -1540,6 +1543,7 @@ extension on TranslationsBn {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

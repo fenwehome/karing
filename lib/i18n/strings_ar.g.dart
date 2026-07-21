@@ -119,6 +119,7 @@ class TranslationsAr with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$ar implements Translations$HomeScreen$en {
 	final TranslationsAr _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'الرجاء تحديد خادم';
-	@override String get invalidServer => 'غير صالح ، الرجاء اختيار مرة أخرى';
-	@override String get disabledServer => 'معطل ، الرجاء اختيار مرة أخرى';
+	@override String invalidServer({required Object p}) => '[${p}] غير صالح، يرجى إعادة اختيار الخادم';
+	@override String disabledServer({required Object p}) => '[${p}] تم تعطيله، يرجى إعادة اختيار الخادم';
 	@override String get expiredServer => 'لا يوجد خادم متاح: قد يكون التكوين قديمًا أو معطلاً';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'جوارب:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'الرجاء الإعداد [الاختصار وصلة] قبل استخدامه';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$ar implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'نسخ إلى تنسيق CSV';
 	@override String get selectType => 'حدد نوع التحويل';
+	@override String get loopbackWarning => 'قد تكون هناك حلقة في الشبكة. يرجى التحقق من إعدادات محول الشبكة';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$ar implements Translations$meta$en {
 	@override String get account => 'حساب';
 	@override String get password => 'كلمة المرور';
 	@override String get decryptPassword => 'فك تشفير كلمة المرور';
+	@override String get overwriteOutboundDns => 'DNS: استبدال [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'مطلوب';
 	@override String get type => 'يكتب';
 	@override String get path => 'طريق';
@@ -989,9 +991,8 @@ extension on TranslationsAr {
 			'FileContentViewerScreen.title' => 'ملف محتوى الملف',
 			'FileContentViewerScreen.clearFileContent' => 'هل أنت متأكد من مسح محتوى الملف؟',
 			'FileContentViewerScreen.clearFileContentTips' => 'هل أنت متأكد من مسح محتوى ملف الملف الشخصي؟قد يتسبب تطهير ملف الملف الشخصي في فقدان البيانات أو وظائف التطبيق غير الطبيعية ، يرجى العمل بحذر',
-			'HomeScreen.toSelectServer' => 'الرجاء تحديد خادم',
-			'HomeScreen.invalidServer' => 'غير صالح ، الرجاء اختيار مرة أخرى',
-			'HomeScreen.disabledServer' => 'معطل ، الرجاء اختيار مرة أخرى',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] غير صالح، يرجى إعادة اختيار الخادم',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] تم تعطيله، يرجى إعادة اختيار الخادم',
 			'HomeScreen.expiredServer' => 'لا يوجد خادم متاح: قد يكون التكوين قديمًا أو معطلاً',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'جوارب:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'الرجاء الإعداد [الاختصار وصلة] قبل استخدامه',
@@ -1034,6 +1035,7 @@ extension on TranslationsAr {
 			'NetConnectionsFilterScreen.chain' => 'خارج',
 			'NetConnectionsScreen.copyAsCSV' => 'نسخ إلى تنسيق CSV',
 			'NetConnectionsScreen.selectType' => 'حدد نوع التحويل',
+			'NetConnectionsScreen.loopbackWarning' => 'قد تكون هناك حلقة في الشبكة. يرجى التحقق من إعدادات محول الشبكة',
 			'PerAppAndroidScreen.title' => 'لكل وكيل تطبيق',
 			'PerAppAndroidScreen.whiteListMode' => 'وضع القائمة البيضاء',
 			'PerAppAndroidScreen.whiteListModeTip' => 'عند التمكين: فقط التطبيقات التي تم فحصها هي وكلاء ؛عندما لا يتم تمكينها: فقط التطبيقات التي لم يتم فحصها هي وكلاء',
@@ -1296,6 +1298,7 @@ extension on TranslationsAr {
 			'meta.account' => 'حساب',
 			'meta.password' => 'كلمة المرور',
 			'meta.decryptPassword' => 'فك تشفير كلمة المرور',
+			'meta.overwriteOutboundDns' => 'DNS: استبدال [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'مطلوب',
 			'meta.type' => 'يكتب',
 			'meta.path' => 'طريق',
@@ -1463,9 +1466,9 @@ extension on TranslationsAr {
 			'isp.unbind' => ({required Object p}) => 'فك الارتباط[${p}]',
 			'isp.faq' => ({required Object p}) => 'الأسئلة الشائعة[${p}]',
 			'isp.customerService' => ({required Object p}) => 'خدمة العملاء[${p}]',
-			'isp.follow' => ({required Object p}) => 'متابعة[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'متابعة[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}]غير صالح أو منتهية الصلاحية',
 			'permission.camera' => 'الكاميرا',
 			'permission.screen' => 'تسجيل الشاشة',
@@ -1540,6 +1543,7 @@ extension on TranslationsAr {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

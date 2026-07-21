@@ -1,4 +1,4 @@
-{
+﻿{
     "AboutScreen": {
         "installRefer": "Installationsquelle",
         "installTime": "Installationszeit",
@@ -51,9 +51,8 @@
         "clearFileContentTips": "Sind Sie sicher, dass Sie den Inhalt der Profil-Datei löschen möchten? Das Löschen der Profil-Datei kann zu Datenverlust oder abnormalen Anwendungsfunktionen führen, bitte gehen Sie mit Vorsicht vor"
     },
     "HomeScreen": {
-        "toSelectServer": "Bitte wählen Sie einen Server aus",
-        "invalidServer": "ist ungültig, bitte wählen Sie erneut",
-        "disabledServer": "ist deaktiviert, bitte wählen Sie erneut",
+        "invalidServer": "[$p] ist nicht mehr gültig, bitte wählen Sie den Server erneut",
+        "disabledServer": "[$p] wurde deaktiviert, bitte wählen Sie den Server erneut",
         "expiredServer": "Keine Server verfügbar, Profile könnten abgelaufen oder deaktiviert sein",
         "systemProxyTips": "socks:$sp,http(s):$hp",
         "myLinkEmpty": "Bitte richten Sie [Shortcut-Link] ein, bevor Sie ihn verwenden",
@@ -105,7 +104,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "In das CSV-Format kopiert",
-        "selectType": "Umleitungstyp auswählen"
+        "selectType": "Umleitungstyp auswählen",
+        "loopbackWarning": "Möglicherweise ist eine Netzwerkschleife aufgetreten. Bitte überprüfen Sie die Einstellungen Ihres Netzwerkadapters"
     },
     "PerAppAndroidScreen": {
         "title": "Pro-App-Proxy",
@@ -388,6 +388,7 @@
         "account": "Konto",
         "password": "Passwort",
         "decryptPassword": "Entschlüsselungspasswort",
+        "overwriteOutboundDns": "DNS: Überschreiben [@:{SettingsScreen.dnsTypeOutbound}]",
         "required": "Erforderlich",
         "type": "Typ",
         "path": "Pfad",
@@ -648,6 +649,7 @@
         "no": "Norsk",
         "da": "Dansk",
         "hi": "हिन्दी",
+        "id": "Bahasa Indonesia",
         "ur": "اردو",
         "bn": "বাংলা",
         "el": "Ελληνικά",
@@ -657,3 +659,4 @@
         "pa": "ਪੰਜਾਬੀ"
     }
 }
+

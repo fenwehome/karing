@@ -186,6 +186,7 @@ class Translations with BaseTranslations<AppLocale, Translations> {
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -378,14 +379,11 @@ class Translations$HomeScreen$en {
 
 	// Translations
 
-	/// en: 'Please Select a Server'
-	String get toSelectServer => 'Please Select a Server';
+	/// en: '[$p] is no longer valid. Please select a server again.'
+	String invalidServer({required Object p}) => '[${p}] is no longer valid. Please select a server again.';
 
-	/// en: 'is invalid, please select again'
-	String get invalidServer => 'is invalid, please select again';
-
-	/// en: 'is disabled, please select again'
-	String get disabledServer => 'is disabled, please select again';
+	/// en: '[$p] has been disabled. Please select a server again.'
+	String disabledServer({required Object p}) => '[${p}] has been disabled. Please select a server again.';
 
 	/// en: 'No servers available, profiles may be expired or disabled'
 	String get expiredServer => 'No servers available, profiles may be expired or disabled';
@@ -557,6 +555,9 @@ class Translations$NetConnectionsScreen$en {
 
 	/// en: 'Select Diversion Type'
 	String get selectType => 'Select Diversion Type';
+
+	/// en: 'A network loop may have occurred. Please check your network adapter settings.'
+	String get loopbackWarning => 'A network loop may have occurred. Please check your network adapter settings.';
 }
 
 // Path: PerAppAndroidScreen
@@ -1420,6 +1421,9 @@ class Translations$meta$en {
 	/// en: 'Decrypt Password'
 	String get decryptPassword => 'Decrypt Password';
 
+	/// en: 'DNS: Override [Proxy Server]'
+	String get overwriteOutboundDns => 'DNS: Override [${_root.SettingsScreen.dnsTypeOutbound}]';
+
 	/// en: 'Required'
 	String get required => 'Required';
 
@@ -2126,9 +2130,8 @@ extension on Translations {
 			'FileContentViewerScreen.title' => 'File Content Viewer',
 			'FileContentViewerScreen.clearFileContent' => 'Are you sure to clear the content of the file?',
 			'FileContentViewerScreen.clearFileContentTips' => 'Are you sure to clear the content of the Profile file? Clearing the Profile file may cause data loss or abnormal application functions, please operate with caution',
-			'HomeScreen.toSelectServer' => 'Please Select a Server',
-			'HomeScreen.invalidServer' => 'is invalid, please select again',
-			'HomeScreen.disabledServer' => 'is disabled, please select again',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] is no longer valid. Please select a server again.',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] has been disabled. Please select a server again.',
 			'HomeScreen.expiredServer' => 'No servers available, profiles may be expired or disabled',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'Please set up [Shortcut Link] before using it',
@@ -2171,6 +2174,7 @@ extension on Translations {
 			'NetConnectionsFilterScreen.chain' => 'Outbound',
 			'NetConnectionsScreen.copyAsCSV' => 'Copied to CSV format',
 			'NetConnectionsScreen.selectType' => 'Select Diversion Type',
+			'NetConnectionsScreen.loopbackWarning' => 'A network loop may have occurred. Please check your network adapter settings.',
 			'PerAppAndroidScreen.title' => 'Per-App Proxy',
 			'PerAppAndroidScreen.whiteListMode' => 'Whitelist Mode',
 			'PerAppAndroidScreen.whiteListModeTip' => 'When enabled: only the apps that have been checked are proxies; when not enabled: only the apps that are not checked are proxies',
@@ -2433,6 +2437,7 @@ extension on Translations {
 			'meta.account' => 'Account',
 			'meta.password' => 'Password',
 			'meta.decryptPassword' => 'Decrypt Password',
+			'meta.overwriteOutboundDns' => 'DNS: Override [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'Required',
 			'meta.type' => 'Type',
 			'meta.path' => 'Path',
@@ -2600,9 +2605,9 @@ extension on Translations {
 			'isp.unbind' => ({required Object p}) => 'Unbind[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'Follow[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Follow[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Invalid or expired',
 			'permission.camera' => 'Camera',
 			'permission.screen' => 'Screen Recording',
@@ -2677,6 +2682,7 @@ extension on Translations {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

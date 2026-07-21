@@ -119,6 +119,7 @@ class TranslationsKo with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$ko implements Translations$HomeScreen$en {
 	final TranslationsKo _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => '서버를 선택하십시오';
-	@override String get invalidServer => '은(는) 유효하지 않습니다. 다시 선택하십시오';
-	@override String get disabledServer => '은(는) 비활성화되었습니다. 다시 선택하십시오';
+	@override String invalidServer({required Object p}) => '[${p}]가 더 이상 유효하지 않습니다. 서버를 다시 선택하세요';
+	@override String disabledServer({required Object p}) => '[${p}]가 비활성화되었습니다. 서버를 다시 선택하세요';
 	@override String get expiredServer => '사용 가능한 서버가 없습니다. 프로필이 만료되었거나 비활성화되었을 수 있습니다';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks: ${sp}, http(s): ${hp}';
 	@override String get myLinkEmpty => '사용하기 전에 [바로가기 링크]를 설정하십시오';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$ko implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'CSV 형식으로 복사됨';
 	@override String get selectType => '분류 유형 선택';
+	@override String get loopbackWarning => '네트워크 루프백이 발생했을 수 있습니다. 네트워크 어댑터 설정을 확인하세요';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$ko implements Translations$meta$en {
 	@override String get account => '계정';
 	@override String get password => '비밀번호';
 	@override String get decryptPassword => '복호화 비밀번호';
+	@override String get overwriteOutboundDns => 'DNS: 덮어쓰기[${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => '필수';
 	@override String get type => '유형';
 	@override String get path => '경로';
@@ -989,9 +991,8 @@ extension on TranslationsKo {
 			'FileContentViewerScreen.title' => '파일 내용 뷰어',
 			'FileContentViewerScreen.clearFileContent' => '파일 내용을 삭제하시겠습니까?',
 			'FileContentViewerScreen.clearFileContentTips' => '프로필 파일 내용을 삭제하시겠습니까? 프로필 파일을 삭제하면 데이터 손실이나 앱의 비정상적인 작동이 발생할 수 있습니다. 주의해서 진행하십시오.',
-			'HomeScreen.toSelectServer' => '서버를 선택하십시오',
-			'HomeScreen.invalidServer' => '은(는) 유효하지 않습니다. 다시 선택하십시오',
-			'HomeScreen.disabledServer' => '은(는) 비활성화되었습니다. 다시 선택하십시오',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}]가 더 이상 유효하지 않습니다. 서버를 다시 선택하세요',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}]가 비활성화되었습니다. 서버를 다시 선택하세요',
 			'HomeScreen.expiredServer' => '사용 가능한 서버가 없습니다. 프로필이 만료되었거나 비활성화되었을 수 있습니다',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks: ${sp}, http(s): ${hp}',
 			'HomeScreen.myLinkEmpty' => '사용하기 전에 [바로가기 링크]를 설정하십시오',
@@ -1034,6 +1035,7 @@ extension on TranslationsKo {
 			'NetConnectionsFilterScreen.chain' => '아웃바운드',
 			'NetConnectionsScreen.copyAsCSV' => 'CSV 형식으로 복사됨',
 			'NetConnectionsScreen.selectType' => '분류 유형 선택',
+			'NetConnectionsScreen.loopbackWarning' => '네트워크 루프백이 발생했을 수 있습니다. 네트워크 어댑터 설정을 확인하세요',
 			'PerAppAndroidScreen.title' => '앱별 프록시',
 			'PerAppAndroidScreen.whiteListMode' => '화이트리스트 모드',
 			'PerAppAndroidScreen.whiteListModeTip' => '켜져 있는 경우: 선택한 앱만 프록시를 통과합니다. 꺼져 있는 경우: 선택하지 않은 앱만 프록시를 통과합니다',
@@ -1296,6 +1298,7 @@ extension on TranslationsKo {
 			'meta.account' => '계정',
 			'meta.password' => '비밀번호',
 			'meta.decryptPassword' => '복호화 비밀번호',
+			'meta.overwriteOutboundDns' => 'DNS: 덮어쓰기[${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => '필수',
 			'meta.type' => '유형',
 			'meta.path' => '경로',
@@ -1463,9 +1466,9 @@ extension on TranslationsKo {
 			'isp.unbind' => ({required Object p}) => '바인딩 해제 [${p}]',
 			'isp.faq' => ({required Object p}) => '자주 묻는 질문 [${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram [${p}]',
-			'isp.follow' => ({required Object p}) => '팔로우 [${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => '팔로우 [${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}]가 유효하지 않거나 만료되었습니다',
 			'permission.camera' => '카메라',
 			'permission.screen' => '화면 녹화',
@@ -1540,6 +1543,7 @@ extension on TranslationsKo {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

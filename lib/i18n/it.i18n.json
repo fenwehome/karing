@@ -1,4 +1,4 @@
-{
+﻿{
     "AboutScreen": {
         "installRefer": "Riferimento di Installazione",
         "installTime": "Ora di Installazione",
@@ -51,9 +51,8 @@
         "clearFileContentTips": "Sei sicuro di voler cancellare il contenuto del file di Profilo? La cancellazione del file di Profilo può causare la perdita di dati o funzioni anomale dell'applicazione, procedere con cautela"
     },
     "HomeScreen": {
-        "toSelectServer": "Seleziona un Server",
-        "invalidServer": "non è valido, seleziona di nuovo",
-        "disabledServer": "è disabilitato, seleziona di nuovo",
+        "invalidServer": "[$p] non è più valido, seleziona di nuovo un server",
+        "disabledServer": "[$p] è stato disabilitato, seleziona di nuovo un server",
         "expiredServer": "Nessun server disponibile, i profili potrebbero essere scaduti o disabilitati",
         "systemProxyTips": "socks:$sp,http(s):$hp",
         "myLinkEmpty": "Configura [Link Rapido] prima di usarlo",
@@ -105,7 +104,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Copiato in formato CSV",
-        "selectType": "Seleziona Tipo di Diversione"
+        "selectType": "Seleziona Tipo di Diversione",
+        "loopbackWarning": "Potrebbe essersi verificato un loop di rete. Controlla le impostazioni della scheda di rete"
     },
     "PerAppAndroidScreen": {
         "title": "Proxy per App",
@@ -388,6 +388,7 @@
         "account": "Account",
         "password": "Password",
         "decryptPassword": "Password di decrittazione",
+        "overwriteOutboundDns": "DNS: Sovrascrivi [@:{SettingsScreen.dnsTypeOutbound}]",
         "required": "Richiesto",
         "type": "Tipo",
         "path": "Percorso",
@@ -648,6 +649,7 @@
         "no": "Norsk",
         "da": "Dansk",
         "hi": "हिन्दी",
+        "id": "Bahasa Indonesia",
         "ur": "اردو",
         "bn": "বাংলা",
         "el": "Ελληνικά",
@@ -657,3 +659,4 @@
         "pa": "ਪੰਜਾਬੀ"
     }
 }
+

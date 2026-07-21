@@ -119,6 +119,7 @@ class TranslationsDe with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$de implements Translations$HomeScreen$en {
 	final TranslationsDe _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'Bitte wählen Sie einen Server aus';
-	@override String get invalidServer => 'ist ungültig, bitte wählen Sie erneut';
-	@override String get disabledServer => 'ist deaktiviert, bitte wählen Sie erneut';
+	@override String invalidServer({required Object p}) => '[${p}] ist nicht mehr gültig, bitte wählen Sie den Server erneut';
+	@override String disabledServer({required Object p}) => '[${p}] wurde deaktiviert, bitte wählen Sie den Server erneut';
 	@override String get expiredServer => 'Keine Server verfügbar, Profile könnten abgelaufen oder deaktiviert sein';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'Bitte richten Sie [Shortcut-Link] ein, bevor Sie ihn verwenden';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$de implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'In das CSV-Format kopiert';
 	@override String get selectType => 'Umleitungstyp auswählen';
+	@override String get loopbackWarning => 'Möglicherweise ist eine Netzwerkschleife aufgetreten. Bitte überprüfen Sie die Einstellungen Ihres Netzwerkadapters';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$de implements Translations$meta$en {
 	@override String get account => 'Konto';
 	@override String get password => 'Passwort';
 	@override String get decryptPassword => 'Entschlüsselungspasswort';
+	@override String get overwriteOutboundDns => 'DNS: Überschreiben [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'Erforderlich';
 	@override String get type => 'Typ';
 	@override String get path => 'Pfad';
@@ -989,9 +991,8 @@ extension on TranslationsDe {
 			'FileContentViewerScreen.title' => 'Dateiinhaltsbetrachter',
 			'FileContentViewerScreen.clearFileContent' => 'Sind Sie sicher, dass Sie den Inhalt der Datei löschen möchten?',
 			'FileContentViewerScreen.clearFileContentTips' => 'Sind Sie sicher, dass Sie den Inhalt der Profil-Datei löschen möchten? Das Löschen der Profil-Datei kann zu Datenverlust oder abnormalen Anwendungsfunktionen führen, bitte gehen Sie mit Vorsicht vor',
-			'HomeScreen.toSelectServer' => 'Bitte wählen Sie einen Server aus',
-			'HomeScreen.invalidServer' => 'ist ungültig, bitte wählen Sie erneut',
-			'HomeScreen.disabledServer' => 'ist deaktiviert, bitte wählen Sie erneut',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] ist nicht mehr gültig, bitte wählen Sie den Server erneut',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] wurde deaktiviert, bitte wählen Sie den Server erneut',
 			'HomeScreen.expiredServer' => 'Keine Server verfügbar, Profile könnten abgelaufen oder deaktiviert sein',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'Bitte richten Sie [Shortcut-Link] ein, bevor Sie ihn verwenden',
@@ -1034,6 +1035,7 @@ extension on TranslationsDe {
 			'NetConnectionsFilterScreen.chain' => 'Ausgehend',
 			'NetConnectionsScreen.copyAsCSV' => 'In das CSV-Format kopiert',
 			'NetConnectionsScreen.selectType' => 'Umleitungstyp auswählen',
+			'NetConnectionsScreen.loopbackWarning' => 'Möglicherweise ist eine Netzwerkschleife aufgetreten. Bitte überprüfen Sie die Einstellungen Ihres Netzwerkadapters',
 			'PerAppAndroidScreen.title' => 'Pro-App-Proxy',
 			'PerAppAndroidScreen.whiteListMode' => 'Whitelist-Modus',
 			'PerAppAndroidScreen.whiteListModeTip' => 'Wenn aktiviert: Nur die markierten Apps sind Proxies; wenn nicht aktiviert: Nur die nicht markierten Apps sind Proxies',
@@ -1296,6 +1298,7 @@ extension on TranslationsDe {
 			'meta.account' => 'Konto',
 			'meta.password' => 'Passwort',
 			'meta.decryptPassword' => 'Entschlüsselungspasswort',
+			'meta.overwriteOutboundDns' => 'DNS: Überschreiben [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'Erforderlich',
 			'meta.type' => 'Typ',
 			'meta.path' => 'Pfad',
@@ -1463,9 +1466,9 @@ extension on TranslationsDe {
 			'isp.unbind' => ({required Object p}) => 'Entbinden[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'Folgen[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Folgen[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Ungültig oder abgelaufen',
 			'permission.camera' => 'Kamera',
 			'permission.screen' => 'Bildschirmaufnahme',
@@ -1540,6 +1543,7 @@ extension on TranslationsDe {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

@@ -119,6 +119,7 @@ class TranslationsSv with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$sv implements Translations$HomeScreen$en {
 	final TranslationsSv _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'Välj en server';
-	@override String get invalidServer => 'är ogiltig, välj igen';
-	@override String get disabledServer => 'är inaktiverad, välj igen';
+	@override String invalidServer({required Object p}) => '[${p}] är inte längre giltig, välj server igen';
+	@override String disabledServer({required Object p}) => '[${p}] är inaktiverad, välj server igen';
 	@override String get expiredServer => 'Inga servrar tillgängliga, profiler kan ha gått ut eller vara inaktiverade';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'Ställ in [Genvägslänk] innan du använder den';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$sv implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'Kopierat till CSV-format';
 	@override String get selectType => 'Välj omledningstyp';
+	@override String get loopbackWarning => 'Ett nätverksloop kan ha uppstått. Kontrollera inställningarna för nätverksadaptern';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$sv implements Translations$meta$en {
 	@override String get account => 'Konto';
 	@override String get password => 'Lösenord';
 	@override String get decryptPassword => 'Dekrypterringslösenord';
+	@override String get overwriteOutboundDns => 'DNS: Åsidosätt [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'Krävs';
 	@override String get type => 'Typ';
 	@override String get path => 'Sökväg';
@@ -989,9 +991,8 @@ extension on TranslationsSv {
 			'FileContentViewerScreen.title' => 'Filinnehållsvisare',
 			'FileContentViewerScreen.clearFileContent' => 'Är du säker på att du vill rensa filens innehåll?',
 			'FileContentViewerScreen.clearFileContentTips' => 'Är du säker på att du vill rensa innehållet i profilfilen? Om du rensar profilfilen kan det leda till dataförlust eller onormala appfunktioner, var försiktig',
-			'HomeScreen.toSelectServer' => 'Välj en server',
-			'HomeScreen.invalidServer' => 'är ogiltig, välj igen',
-			'HomeScreen.disabledServer' => 'är inaktiverad, välj igen',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] är inte längre giltig, välj server igen',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] är inaktiverad, välj server igen',
 			'HomeScreen.expiredServer' => 'Inga servrar tillgängliga, profiler kan ha gått ut eller vara inaktiverade',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'Ställ in [Genvägslänk] innan du använder den',
@@ -1034,6 +1035,7 @@ extension on TranslationsSv {
 			'NetConnectionsFilterScreen.chain' => 'Utgående',
 			'NetConnectionsScreen.copyAsCSV' => 'Kopierat till CSV-format',
 			'NetConnectionsScreen.selectType' => 'Välj omledningstyp',
+			'NetConnectionsScreen.loopbackWarning' => 'Ett nätverksloop kan ha uppstått. Kontrollera inställningarna för nätverksadaptern',
 			'PerAppAndroidScreen.title' => 'Proxy per app',
 			'PerAppAndroidScreen.whiteListMode' => 'Whitelist-läge',
 			'PerAppAndroidScreen.whiteListModeTip' => 'När aktiverat: endast de markerade apparna använder proxy; när inte aktiverat: endast de omarkerade apparna använder proxy',
@@ -1296,6 +1298,7 @@ extension on TranslationsSv {
 			'meta.account' => 'Konto',
 			'meta.password' => 'Lösenord',
 			'meta.decryptPassword' => 'Dekrypterringslösenord',
+			'meta.overwriteOutboundDns' => 'DNS: Åsidosätt [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'Krävs',
 			'meta.type' => 'Typ',
 			'meta.path' => 'Sökväg',
@@ -1463,9 +1466,9 @@ extension on TranslationsSv {
 			'isp.unbind' => ({required Object p}) => 'Ta bort bindning[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'Följ[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'Följ[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] Ogiltig eller utgången',
 			'permission.camera' => 'Kamera',
 			'permission.screen' => 'Skärminspelning',
@@ -1540,6 +1543,7 @@ extension on TranslationsSv {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

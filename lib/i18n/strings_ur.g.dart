@@ -119,6 +119,7 @@ class TranslationsUr with BaseTranslations<AppLocale, Translations> implements T
 		'no': 'Norsk',
 		'da': 'Dansk',
 		'hi': 'हिन्दी',
+		'id': 'Bahasa Indonesia',
 		'ur': 'اردو',
 		'bn': 'বাংলা',
 		'el': 'Ελληνικά',
@@ -236,9 +237,8 @@ class _Translations$HomeScreen$ur implements Translations$HomeScreen$en {
 	final TranslationsUr _root; // ignore: unused_field
 
 	// Translations
-	@override String get toSelectServer => 'براہ کرم ایک سرور منتخب کریں';
-	@override String get invalidServer => 'غلط ہے، براہ کرم دوبارہ منتخب کریں';
-	@override String get disabledServer => 'غیر فعال ہے، براہ کرم دوبارہ منتخب کریں';
+	@override String invalidServer({required Object p}) => '[${p}] اب درست نہیں ہے، براہ کرم سرور دوبارہ منتخب کریں';
+	@override String disabledServer({required Object p}) => '[${p}] غیر فعال کر دیا گیا ہے، براہ کرم سرور دوبارہ منتخب کریں';
 	@override String get expiredServer => 'کوئی سرور دستیاب نہیں ہے، پروفائلز کی میعاد ختم ہو سکتی ہے یا وہ غیر فعال ہو سکتے ہیں';
 	@override String systemProxyTips({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}';
 	@override String get myLinkEmpty => 'براہ کرم استعمال کرنے سے پہلے [شارٹ کٹ لنک] ترتیب دیں';
@@ -326,6 +326,7 @@ class _Translations$NetConnectionsScreen$ur implements Translations$NetConnectio
 	// Translations
 	@override String get copyAsCSV => 'CSV فارمیٹ میں کاپی کر لیا گیا';
 	@override String get selectType => 'ڈائیورژن کی قسم منتخب کریں';
+	@override String get loopbackWarning => 'نیٹ ورک میں لوپ بیک ہو سکتا ہے، براہ کرم نیٹ ورک اڈاپٹر کی ترتیبات چیک کریں';
 }
 
 // Path: PerAppAndroidScreen
@@ -668,6 +669,7 @@ class _Translations$meta$ur implements Translations$meta$en {
 	@override String get account => 'اکاؤنٹ';
 	@override String get password => 'پاس ورڈ';
 	@override String get decryptPassword => 'ڈی کرپٹ پاس ورڈ';
+	@override String get overwriteOutboundDns => 'DNS: اووررائڈ کریں [${_root.SettingsScreen.dnsTypeOutbound}]';
 	@override String get required => 'ضروری';
 	@override String get type => 'قسم';
 	@override String get path => 'راستہ';
@@ -989,9 +991,8 @@ extension on TranslationsUr {
 			'FileContentViewerScreen.title' => 'فائل کے مواد کا ناظر',
 			'FileContentViewerScreen.clearFileContent' => 'کیا آپ واقعی فائل کے مواد کو صاف کرنا چاہتے ہیں؟',
 			'FileContentViewerScreen.clearFileContentTips' => 'کیا آپ واقعی پروفائل فائل کے مواد کو صاف کرنا چاہتے ہیں؟ پروفائل فائل کو صاف کرنے سے ڈیٹا کا نقصان یا ایپ کے غیر معمولی افعال ہو سکتے ہیں، براہ کرم احتیاط سے کام کریں',
-			'HomeScreen.toSelectServer' => 'براہ کرم ایک سرور منتخب کریں',
-			'HomeScreen.invalidServer' => 'غلط ہے، براہ کرم دوبارہ منتخب کریں',
-			'HomeScreen.disabledServer' => 'غیر فعال ہے، براہ کرم دوبارہ منتخب کریں',
+			'HomeScreen.invalidServer' => ({required Object p}) => '[${p}] اب درست نہیں ہے، براہ کرم سرور دوبارہ منتخب کریں',
+			'HomeScreen.disabledServer' => ({required Object p}) => '[${p}] غیر فعال کر دیا گیا ہے، براہ کرم سرور دوبارہ منتخب کریں',
 			'HomeScreen.expiredServer' => 'کوئی سرور دستیاب نہیں ہے، پروفائلز کی میعاد ختم ہو سکتی ہے یا وہ غیر فعال ہو سکتے ہیں',
 			'HomeScreen.systemProxyTips' => ({required Object sp, required Object hp}) => 'socks:${sp},http(s):${hp}',
 			'HomeScreen.myLinkEmpty' => 'براہ کرم استعمال کرنے سے پہلے [شارٹ کٹ لنک] ترتیب دیں',
@@ -1034,6 +1035,7 @@ extension on TranslationsUr {
 			'NetConnectionsFilterScreen.chain' => 'آؤٹ باؤنڈ',
 			'NetConnectionsScreen.copyAsCSV' => 'CSV فارمیٹ میں کاپی کر لیا گیا',
 			'NetConnectionsScreen.selectType' => 'ڈائیورژن کی قسم منتخب کریں',
+			'NetConnectionsScreen.loopbackWarning' => 'نیٹ ورک میں لوپ بیک ہو سکتا ہے، براہ کرم نیٹ ورک اڈاپٹر کی ترتیبات چیک کریں',
 			'PerAppAndroidScreen.title' => 'فی ایپ پراکسی',
 			'PerAppAndroidScreen.whiteListMode' => 'وائٹ لسٹ موڈ',
 			'PerAppAndroidScreen.whiteListModeTip' => 'جب فعال ہو: صرف نشان زد ایپس ہی پراکسی ہیں؛ جب فعال نہ ہو: صرف غیر نشان زد ایپس ہی پراکسی ہیں',
@@ -1296,6 +1298,7 @@ extension on TranslationsUr {
 			'meta.account' => 'اکاؤنٹ',
 			'meta.password' => 'پاس ورڈ',
 			'meta.decryptPassword' => 'ڈی کرپٹ پاس ورڈ',
+			'meta.overwriteOutboundDns' => 'DNS: اووررائڈ کریں [${_root.SettingsScreen.dnsTypeOutbound}]',
 			'meta.required' => 'ضروری',
 			'meta.type' => 'قسم',
 			'meta.path' => 'راستہ',
@@ -1463,9 +1466,9 @@ extension on TranslationsUr {
 			'isp.unbind' => ({required Object p}) => 'علیحدہ کریں[${p}]',
 			'isp.faq' => ({required Object p}) => 'FAQ[${p}]',
 			'isp.customerService' => ({required Object p}) => 'Telegram[${p}]',
-			'isp.follow' => ({required Object p}) => 'فالو کریں[${p}]',
 			_ => null,
 		} ?? switch (path) {
+			'isp.follow' => ({required Object p}) => 'فالو کریں[${p}]',
 			'isp.invalidOrExpired' => '[${_root.meta.isp}] غلط یا ختم ہو گیا',
 			'permission.camera' => 'کیمرہ',
 			'permission.screen' => 'اسکرین ریکارڈنگ',
@@ -1540,6 +1543,7 @@ extension on TranslationsUr {
 			'locales.no' => 'Norsk',
 			'locales.da' => 'Dansk',
 			'locales.hi' => 'हिन्दी',
+			'locales.id' => 'Bahasa Indonesia',
 			'locales.ur' => 'اردو',
 			'locales.bn' => 'বাংলা',
 			'locales.el' => 'Ελληνικά',

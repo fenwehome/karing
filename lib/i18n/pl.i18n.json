@@ -1,4 +1,4 @@
-{
+﻿{
     "AboutScreen": {
         "installRefer": "Źródło instalacji",
         "installTime": "Czas instalacji",
@@ -51,9 +51,8 @@
         "clearFileContentTips": "Czy na pewno chcesz wyczyścić zawartość pliku profilu? Wyczyszczenie pliku profilu może spowodować utratę danych lub nieprawidłowe działanie aplikacji, prosimy o ostrożność"
     },
     "HomeScreen": {
-        "toSelectServer": "Wybierz serwer",
-        "invalidServer": "jest nieprawidłowy, wybierz ponownie",
-        "disabledServer": "jest wyłączony, wybierz ponownie",
+        "invalidServer": "[$p] jest już nieprawidłowy, wybierz ponownie serwer",
+        "disabledServer": "[$p] został wyłączony, wybierz ponownie serwer",
         "expiredServer": "Brak dostępnych serwerów, profile mogą być wygasłe lub wyłączone",
         "systemProxyTips": "socks:$sp,http(s):$hp",
         "myLinkEmpty": "Skonfiguruj [Skrót] przed użyciem",
@@ -105,7 +104,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Skopiowano do formatu CSV",
-        "selectType": "Wybierz typ przekierowania"
+        "selectType": "Wybierz typ przekierowania",
+        "loopbackWarning": "Mogło wystąpić zapętlenie sieci. Sprawdź ustawienia karty sieciowej"
     },
     "PerAppAndroidScreen": {
         "title": "Proxy dla poszczególnych aplikacji",
@@ -388,6 +388,7 @@
         "account": "Konto",
         "password": "Hasło",
         "decryptPassword": "Hasło deszyfrujące",
+        "overwriteOutboundDns": "DNS: Nadpisz [@:{SettingsScreen.dnsTypeOutbound}]",
         "required": "Wymagane",
         "type": "Typ",
         "path": "Ścieżka",
@@ -648,6 +649,7 @@
         "no": "Norsk",
         "da": "Dansk",
         "hi": "हिन्दी",
+        "id": "Bahasa Indonesia",
         "ur": "اردو",
         "bn": "বাংলা",
         "el": "Ελληνικά",
@@ -657,3 +659,4 @@
         "pa": "ਪੰਜਾਬੀ"
     }
 }
+

@@ -1,4 +1,4 @@
-{
+﻿{
     "AboutScreen": {
         "installRefer": "Mã giới thiệu cài đặt",
         "installTime": "Thời gian cài đặt",
@@ -51,9 +51,8 @@
         "clearFileContentTips": "Bạn có chắc chắn muốn xóa nội dung của tệp cấu hình không? Việc xóa tệp cấu hình có thể gây mất dữ liệu hoặc lỗi ứng dụng, vui lòng thực hiện thận trọng"
     },
     "HomeScreen": {
-        "toSelectServer": "Vui lòng chọn một máy chủ",
-        "invalidServer": "không hợp lệ, vui lòng chọn lại",
-        "disabledServer": "đã bị vô hiệu hóa, vui lòng chọn lại",
+        "invalidServer": "[$p] không còn hợp lệ, vui lòng chọn lại máy chủ",
+        "disabledServer": "[$p] đã bị vô hiệu hóa, vui lòng chọn lại máy chủ",
         "expiredServer": "Không có máy chủ khả dụng, cấu hình có thể đã hết hạn hoặc bị vô hiệu hóa",
         "systemProxyTips": "socks: $sp, http(s): $hp",
         "myLinkEmpty": "Vui lòng thiết lập [Liên kết nhanh] trước khi sử dụng",
@@ -105,7 +104,8 @@
     },
     "NetConnectionsScreen": {
         "copyAsCSV": "Đã sao chép định dạng CSV",
-        "selectType": "Chọn loại phân luồng"
+        "selectType": "Chọn loại phân luồng",
+        "loopbackWarning": "Có thể đã xảy ra vòng lặp mạng. Vui lòng kiểm tra cài đặt card mạng"
     },
     "PerAppAndroidScreen": {
         "title": "Proxy cho từng ứng dụng",
@@ -388,6 +388,7 @@
         "account": "Tài khoản",
         "password": "Mật khẩu",
         "decryptPassword": "Mật khẩu giải mã",
+        "overwriteOutboundDns": "DNS: Ghi đè [@:{SettingsScreen.dnsTypeOutbound}]",
         "required": "Bắt buộc",
         "type": "Loại",
         "path": "Đường dẫn",
@@ -648,6 +649,7 @@
         "no": "Norsk",
         "da": "Dansk",
         "hi": "हिन्दी",
+        "id": "Bahasa Indonesia",
         "ur": "اردو",
         "bn": "বাংলা",
         "el": "Ελληνικά",
@@ -657,3 +659,4 @@
         "pa": "ਪੰਜਾਬੀ"
     }
 }
+
